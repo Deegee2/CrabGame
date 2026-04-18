@@ -4,8 +4,12 @@ extends CharacterBody3D
 
 var flip_speed : float = 15.0
 var is_facing_right : bool = true
+var is_talking : bool = false
 @export var speed: float = 10.0
 @export var gravity: float = 9.8
+
+func _ready():
+	DialogueManager.connect("dialogue_ended",finishedScene)
 
 func _physics_process(delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -38,4 +42,10 @@ func _physics_process(delta):
 
 
 func _on_actionable_area_entered(area: Area3D) -> void:
-	area.action()
+	if area.name == "ObjectArea":
+		print("Touching Object")
+		area.action()
+
+func finishedScene():
+	#Regain player's control after dialogue has ended
+	pass

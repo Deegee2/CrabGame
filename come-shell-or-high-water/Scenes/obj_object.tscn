@@ -19,10 +19,11 @@ animations = [{
 
 [node name="Obj_Object" type="Node3D" unique_id=688539386]
 
-[node name="Actionable" parent="." unique_id=1446156801 instance=ExtResource("1_08qdb")]
+[node name="ObjectArea" parent="." unique_id=1446156801 instance=ExtResource("1_08qdb")]
+collision_mask = 1
 dialogue_resource = ExtResource("2_sw4v7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable" unique_id=1388431034]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectArea" unique_id=1388431034]
 shape = SubResource("SphereShape3D_sw4v7")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1595472362]
