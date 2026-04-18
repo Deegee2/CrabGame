@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://covyosa222o3j"]
+[gd_scene format=3 uid="uid://covyosa222o3j"]
 
-[ext_resource type="Script" path="res://dialogue/dialogue_balloon.gd" id="1_ndejj"]
+[ext_resource type="Script" uid="uid://cak4ubrario2u" path="res://dialogue/dialogue_balloon.gd" id="1_ndejj"]
 [ext_resource type="AudioStream" uid="uid://oqqmbm8k1cbl" path="res://dialogue/talk.wav" id="2_73577"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hudaw"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_2hpv4"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_2hpv4"]
 [ext_resource type="Theme" uid="uid://up372ugllyij" path="res://dialogue/theme.tres" id="3_av2hy"]
 
 [sub_resource type="Animation" id="Animation_xp3hu"]
@@ -52,17 +52,17 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gdt14"]
 _data = {
-"RESET": SubResource("Animation_xp3hu"),
-"hide_character": SubResource("Animation_1kboi"),
-"show_character": SubResource("Animation_wl3v2")
+&"RESET": SubResource("Animation_xp3hu"),
+&"hide_character": SubResource("Animation_1kboi"),
+&"show_character": SubResource("Animation_wl3v2")
 }
 
-[node name="DialogueBalloon" type="CanvasLayer"]
+[node name="DialogueBalloon" type="CanvasLayer" unique_id=478657756]
 layer = 100
 script = ExtResource("1_ndejj")
 talk_sound = ExtResource("2_73577")
 
-[node name="Balloon" type="Control" parent="."]
+[node name="Balloon" type="Control" parent="." unique_id=232699282]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -72,7 +72,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_av2hy")
 
-[node name="Panel" type="Panel" parent="Balloon"]
+[node name="Panel" type="Panel" parent="Balloon" unique_id=1492152854]
 clip_children = 2
 layout_mode = 1
 anchors_preset = 12
@@ -87,7 +87,7 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
 
-[node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
+[node name="Dialogue" type="MarginContainer" parent="Balloon/Panel" unique_id=1790333942]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,18 +95,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/Panel/Dialogue"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/Panel/Dialogue" unique_id=1420652363]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="Balloon/Panel/Dialogue/HBoxContainer"]
+[node name="Control" type="Control" parent="Balloon/Panel/Dialogue/HBoxContainer" unique_id=1216171695]
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue/HBoxContainer" unique_id=912120035]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer"]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer" unique_id=80389497]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
@@ -116,13 +116,13 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer" instance=ExtResource("2_hudaw")]
+[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer" unique_id=1493231458 instance=ExtResource("2_hudaw")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue..."
 
-[node name="Responses" type="MarginContainer" parent="Balloon"]
+[node name="Responses" type="MarginContainer" parent="Balloon" unique_id=2043125556]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -136,7 +136,7 @@ offset_bottom = -154.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/Responses" node_paths=PackedStringArray("response_template")]
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/Responses" unique_id=2116973641 node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
@@ -144,11 +144,11 @@ theme_override_constants/separation = 15
 script = ExtResource("3_2hpv4")
 response_template = NodePath("ResponseExample")
 
-[node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
+[node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu" unique_id=1885834594]
 layout_mode = 2
 text = "Response example"
 
-[node name="Notification" type="Control" parent="."]
+[node name="Notification" type="Control" parent="." unique_id=1991336865]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -158,7 +158,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_av2hy")
 
-[node name="Panel" type="Panel" parent="Notification"]
+[node name="Panel" type="Panel" parent="Notification" unique_id=1987430717]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -173,7 +173,7 @@ offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Notification/Panel"]
+[node name="CenterContainer" type="CenterContainer" parent="Notification/Panel" unique_id=129779846]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -182,7 +182,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NotificationLabel" type="RichTextLabel" parent="Notification/Panel/CenterContainer"]
+[node name="NotificationLabel" type="RichTextLabel" parent="Notification/Panel/CenterContainer" unique_id=1226225019]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(560, 35)
 layout_mode = 2
@@ -190,17 +190,15 @@ bbcode_enabled = true
 text = "[center]Notification..."
 fit_content = true
 
-[node name="PortraitPosition" type="Marker2D" parent="."]
+[node name="PortraitPosition" type="Marker2D" parent="." unique_id=41910176]
 unique_name_in_owner = true
 position = Vector2(203, 720)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1020208517]
 unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_gdt14")
-}
+libraries/ = SubResource("AnimationLibrary_gdt14")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=153860708]
 unique_name_in_owner = true
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

@@ -1,16 +1,22 @@
 extends Camera3D
 
-@export var follow_target: Node3D
-@export var look_target: Node3D
-@export var smoothing_speed: float = 5.0
+@export var target_path: NodePath # Assign your Player (CharacterBody3D) here
+@export var offset: Vector3 = Vector3(0, 0, 10) # X, Y, Z offset
+@export var smoothness: float = 0.1 # Lower is smoother/slower
 
-func _process(delta):
-	if follow_target:
-		# Calculate target position with offset
-		var target_position = follow_target.global_position + Vector3(0, 2, 25)
-		# Smoothly interpolate current position to target
-		global_position = global_position.lerp(target_position, smoothing_speed * delta)
+var target: Node3D
+
+func _ready():
+	if target_path:
+		target = get_node(target_path)
+
+func _physics_process(_delta):
+	if target:
+		# Calculate where the camera SHOULD be
+		var target_pos = target.global_position + offset
 		
-		# Look at the target
-		if look_target:
-			look_at(look_target.global_position)
+		# Smoothly move the camera to that position
+		global_position = global_position.lerp(target_pos, smoothness)
+		
+		# Optional: Keep the camera looking at the player
+		# look_at(target.global_position)
