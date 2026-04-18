@@ -16,6 +16,9 @@ animations = [{
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_q6xje"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_7gnr4"]
+radius = 0.7332694
+
 [node name="char_Crabeau" type="Node3D" unique_id=435461204]
 
 [node name="Crabeau" type="CharacterBody3D" parent="." unique_id=1771414730]
@@ -27,3 +30,11 @@ sprite_frames = SubResource("SpriteFrames_7gnr4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crabeau" unique_id=2130973712]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 shape = SubResource("SphereShape3D_q6xje")
+
+[node name="Actionable" type="Area3D" parent="Crabeau" unique_id=657194417]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crabeau/Actionable" unique_id=415649245]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_7gnr4")
+
+[connection signal="area_entered" from="Crabeau/Actionable" to="Crabeau" method="_on_actionable_area_entered"]

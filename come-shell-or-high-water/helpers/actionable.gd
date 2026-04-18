@@ -1,4 +1,4 @@
-extends Area2D
+extends Area3D
 
 
 @export var dialogue_resource: DialogueResource
