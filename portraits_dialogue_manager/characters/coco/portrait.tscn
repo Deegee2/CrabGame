@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://05jl6jpu63mm"]
+
+[ext_resource type="Script" path="res://helpers/base_portrait.gd" id="1_iprqy"]
+[ext_resource type="Texture2D" uid="uid://d14x0gokkru0m" path="res://characters/coco/body.svg" id="2_omc78"]
+[ext_resource type="Texture2D" uid="uid://bjirydb4cp8ss" path="res://characters/coco/face.svg" id="3_7lu2o"]
+[ext_resource type="Texture2D" uid="uid://c8i24io6tmh2n" path="res://characters/coco/face_shady.svg" id="4_wc4lg"]
+
+[sub_resource type="Animation" id="Animation_kg8sy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/Body/Face:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_7lu2o")]
+}
+
+[sub_resource type="Animation" id="Animation_8ium3"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/Body/Face:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_7lu2o")]
+}
+
+[sub_resource type="Animation" id="Animation_3dax0"]
+resource_name = "shady"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/Body/Face:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_wc4lg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 0.95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0qvg"]
+_data = {
+"RESET": SubResource("Animation_kg8sy"),
+"default": SubResource("Animation_8ium3"),
+"shady": SubResource("Animation_3dax0")
+}
+
+[node name="Portrait" type="Node2D" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_iprqy")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Anchor" type="Marker2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="Anchor"]
+position = Vector2(1, -250)
+texture = ExtResource("2_omc78")
+
+[node name="Face" type="Sprite2D" parent="Anchor/Body"]
+position = Vector2(20, 87)
+texture = ExtResource("3_7lu2o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_k0qvg")
+}
+autoplay = "default"

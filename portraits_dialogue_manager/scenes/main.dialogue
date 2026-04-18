@@ -1,0 +1,30 @@
+~ talk_to_nathan
+Coco: Hi Nathan.
+Nathan: Hi Coco.
+if State.apple_status == "has":
+	Coco: I have an apple.
+	- Give to Nathan
+		set State.apple_status = "gave"
+		Coco: Here you go.
+		Nathan: Thanks. [#happy]
+		Coco: You're welcome.
+	- Keep it
+		Coco: But it's mine. [#shady]
+		Nathan: Fair enough.
+elif State.apple_status == "gave":
+	Nathan: Thanks again for the apple. [#happy]
+else:
+	Nathan: I sure wish I had an apple. Apparently there's an apple tree around here somewhere.
+	Coco: I'll go have a look.
+=> END
+
+
+~ pick_apple
+Coco: It's an apple tree.
+do coco.look_down()
+Coco: I'll just take one.
+do coco.reach_up()
+set State.apple_status = "has"
+[wave amp=25 freq=5]You got an [color=#ff3f3f]APPLE[/color].[/wave]
+Coco: Now I can give this to Nathan.
+=> END
