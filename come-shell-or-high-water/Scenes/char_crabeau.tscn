@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://wv22bc3it4af"]
+
+[ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="1_7gnr4"]
+[ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="1_daddu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7gnr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_daddu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_q6xje"]
+
+[node name="char_Crabeau" type="Node3D" unique_id=435461204]
+
+[node name="Crabeau" type="CharacterBody3D" parent="." unique_id=1771414730]
+script = ExtResource("1_7gnr4")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="Crabeau" unique_id=1804192104]
+sprite_frames = SubResource("SpriteFrames_7gnr4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crabeau" unique_id=2130973712]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+shape = SubResource("SphereShape3D_q6xje")

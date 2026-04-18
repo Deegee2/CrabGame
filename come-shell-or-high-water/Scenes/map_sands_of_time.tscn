@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://beaj284824h8q"]
+
+[ext_resource type="PackedScene" uid="uid://wv22bc3it4af" path="res://Scenes/char_crabeau.tscn" id="1_lahq8"]
+[ext_resource type="Script" uid="uid://c86k3l5ex5w4w" path="res://Scenes/camera_3d.gd" id="2_7rdna"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lahq8"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7rdna"]
+sky_material = SubResource("ProceduralSkyMaterial_lahq8")
+
+[sub_resource type="Environment" id="Environment_bbrf3"]
+background_mode = 2
+sky = SubResource("Sky_7rdna")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_pclsy"]
+size = Vector3(150, 1, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lahq8"]
+size = Vector3(150, 1, 15)
+
+[node name="Sands of Time" type="Node3D" unique_id=1021689238]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=306830023]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=453269673]
+environment = SubResource("Environment_bbrf3")
+
+[node name="Sand" type="MeshInstance3D" parent="." unique_id=1052407425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+layers = 2
+mesh = SubResource("BoxMesh_pclsy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sand" unique_id=1504173469]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sand/StaticBody3D" unique_id=2032494549]
+shape = SubResource("BoxShape3D_lahq8")
+
+[node name="char_Crabeau" parent="." unique_id=435461204 instance=ExtResource("1_lahq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5229404, 0)
+metadata/_edit_group_ = true
+
+[node name="Camera3D" type="Camera3D" parent="char_Crabeau" unique_id=326660329 node_paths=PackedStringArray("follow_target", "look_target")]
+transform = Transform3D(1, 0, 0, 0, 0.8739843, 0.48595402, 0, -0.48595402, 0.8739843, 0, 4.3551016, 6.746464)
+script = ExtResource("2_7rdna")
+follow_target = NodePath("..")
+look_target = NodePath("..")
+smoothing_speed = 10.0
