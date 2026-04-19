@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://q0iagatpjpu8"]
 
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://helpers/actionable.tscn" id="1_xgobo"]
+[ext_resource type="Script" uid="uid://c0tqdb4s13ui3" path="res://Scripts/ending.gd" id="2_0lq0k"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="2_8kui1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xgobo"]
@@ -17,13 +18,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kui1"]
+albedo_color = Color(1, 0.19607843, 0.28235295, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0lq0k"]
+gravity = Vector3(0, 9.8, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3ivgy"]
+size = Vector3(1, 1, 100)
+
 [node name="Obj_Object" type="Node3D" unique_id=688539386]
 
 [node name="Ending_Flee" parent="." unique_id=1446156801 instance=ExtResource("1_xgobo")]
 collision_mask = 1
+script = ExtResource("2_0lq0k")
+ending_scene = "res://Cutscenes/main.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ending_Flee" unique_id=1388431034]
 shape = SubResource("BoxShape3D_xgobo")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1595472362]
 sprite_frames = SubResource("SpriteFrames_dq3cv")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1364482118]
+material_override = SubResource("StandardMaterial3D_8kui1")
+emitting = false
+amount_ratio = 0.4
+lifetime = 1.5
+explosiveness = 0.17
+process_material = SubResource("ParticleProcessMaterial_0lq0k")
+draw_pass_1 = SubResource("BoxMesh_3ivgy")
+
+[connection signal="area_entered" from="Ending_Flee" to="Ending_Flee" method="_on_area_entered"]

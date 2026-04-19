@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cjqrkk4gsq6ho"
+path="res://.godot/imported/crabette_pregnant.dialogue-6229e35bef04e7ef2bb853fc921b3a78.tres"
+
+[deps]
+
+source_file="res://Cutscenes/crabette_pregnant.dialogue"
+dest_files=["res://.godot/imported/crabette_pregnant.dialogue-6229e35bef04e7ef2bb853fc921b3a78.tres"]
+
+[params]
+
+defaults=true

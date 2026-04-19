@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bsmfj16l4xt"
+path="res://.godot/imported/leaving_the_mafia.dialogue-d1b3ea700179fd6c3774cc16a14a4459.tres"
+
+[deps]
+
+source_file="res://Cutscenes/leaving_the_mafia.dialogue"
+dest_files=["res://.godot/imported/leaving_the_mafia.dialogue-d1b3ea700179fd6c3774cc16a14a4459.tres"]
+
+[params]
+
+defaults=true

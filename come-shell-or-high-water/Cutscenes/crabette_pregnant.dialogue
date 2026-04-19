@@ -1,0 +1,23 @@
+~ start
+do add_characters("Clarence")
+do add_characters("Crabette")
+Clarence: Isn't it a beautiful day, Crabette?
+Crabette: ...
+Clarence: What is it my coral queen?
+Crabette: ...blub.
+Clarence: Just tell me, is everything alright?
+Crabette: Blub. Blub. Blub.
+Clarence: P-pregnant!? When did this happen?
+Crabette: Blub. Blub. Bluuuuuubb <3.
+Clarence: Oh yeah, molting season. What a fun time that was. When are you due?
+Crabette: Blub.
+Clarence: Today!? Is that why you wanted to come to the beach? To lay your eggs?
+Crabette: Blub. Blub. Blub!
+Clarence: I'm happy, I'm happy. It's just a lot to take in. My head's spinning.
+Crabette: ...
+Clarence: ...
+Crabette: Blub?
+Clarence: I-I think I'm done with the mafia life, Crabette. Really done. Our kids need someone they can look up to, and that will be around for them. I will tell the Don I'm quitting tomorrow, marrying you, and starting my shell boutique.
+do erase_characters()
+set GlobalVariables.memories_acquired += 1
+=> END

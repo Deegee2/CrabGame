@@ -1,0 +1,26 @@
+~ start
+do add_characters("Clarence")
+do add_characters("Crabette")
+Clarence: You wanted to see me, Don?
+Don Craw-Daddy: Clarence, The Scallops have informed me of how you deftly duped the Swordfish Squad.
+Clarence: Oh, ‘twas nothing, your Donliness. The authorities never think twice of a shiny shell.
+Don Craw-Daddy: Hm. Where I come from, the shinier someone’s shell, the less they understand the value of a hard day’s work.
+Clarence: ...Well I assure you, your Donliness, my shell is only shiny because of hard work.
+Don Craw-Daddy: ...Hmph, is that right? What do you know about Tyrant’s Cove?
+Clarence: ..I’ve only heard stories of The Trawling.
+Don Craw-Daddy: Before The Trawling, I had to run crab meat for the shinies in charge of that accursed pit.
+Clarence: Well everyone’s got to eat right?
+Don Craw-Daddy: Day after day the Shinies would dine on the flesh of my brothers. Disgusting. 
+Clarence: ...
+Don Craw-Daddy: To me, the flesh of the deceased should never leave the shell. I cannot fathom how anyone could stand to be in its presence.
+Clarence: I agree, your Donliness, but if it’s removed from one’s shell, surely it must go somewhere.
+Don Craw-Daddy: Such as?
+Clarence: One’s shell should not simply be left to rot in their shell. They must be returned to the Great Blue.
+Don Craw-Daddy: I see you are also a crustacean of principles. The Scallops have informed me you were running the remains of your brethren. I trust you were returning them?
+Clarence: ...
+Don Craw-Daddy: ...
+Clarence: It’s as you said, sir. Everyone’s got to eat.
+Don Craw-Daddy: I never said that. You did.
+do erase_characters()
+set GlobalVariables.memories_acquired += 1
+=> END

@@ -1,0 +1,21 @@
+~ start
+do add_characters("Clarence")
+do add_characters("Crabette")
+Crabette: Blub! Blub!
+Clarence: I'm sorry for not answering your calls my coral queen.... I just hate seeing you not looking my best.
+Crabette: Blub! Blub!
+Clarence: I can't open the door. You'd be shocked at my appearance.
+Crabette: Blub?
+Clarence: My last job went to shit. It was supposed to be so simple, but the turtle's goons roughed me up.
+Crabette: Blub! Bulb! Blub!
+Clarence: I know, I know I promised nothing dangerous. I'm ashamed that I let you down.
+Crabette: Blub. Blub blub. Blub.
+Clarence: Leave the life!? Like your father, the Don, would ever let that happen.
+Crabette: Blub. Blub?
+Clarence: I just don't feel ready to open the boutique yet. I don't think I have what it takes.
+Crabette: Blub. Blub. Blub. Blub?
+Clarence: I CAN'T LET YOU SEE ME! PLEASE, GO HOME MY SWEET. I PROMISE TO CALL when I'm more presentable.....
+Crabette: Blub!
+do erase_characters()
+set GlobalVariables.memories_acquired += 1
+=> END

@@ -1,0 +1,18 @@
+~ start
+do add_characters("Clarence")
+do add_characters("Crabette")
+Crabette: Blub. Blub 
+Clarence: Hello, sweetie. Sorry you have to see me not looking my best.
+Crabette: Blub. Blub?
+Clarence: It was a very simple job, I assure you. Deliver some pearls for Oye, but those bottom feeders Manny and Pete got in the way.
+Crabette: Blub. Blub Blub.
+Clarence: I put up one heck of a fight my coral cutie. They don't call me "Quick Claw" for nothing.
+Clarence: Blub. Blub. Blub?
+Clarence: But, I might have bit off more than I could chew. Once Pistol Pete got my shell off and Manny landed the finishing blow on my back it was all over.
+Crabette: Blub. Bluuuuuuuuuub.
+Clarence: It's okay my coral queen. Your crab is tough enough to take it. It just sucks, because the money for this job was to pay for our wedding.
+Crabette: Blub <3. Blub! Blub!! Blub!!!!
+Clarence: ....fine. I promise not to do anything that dangerous again. Now could you get me out of here, pretty please?
+do erase_characters()
+set GlobalVariables.memories_acquired += 1
+=> END

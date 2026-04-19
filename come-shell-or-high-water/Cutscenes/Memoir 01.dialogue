@@ -1,7 +1,4 @@
 ~ start
-do add_characters("Nathan")
-do add_characters("Coco")
 Coco: This is memoir 01!
 Nathan: Correct. Memoir 01.
-do erase_characters()
 => END

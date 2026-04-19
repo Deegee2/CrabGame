@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://clknfik51kblf"
+path="res://.godot/imported/meeting_the_don.dialogue-d67a12d526590815044bfa48095c3575.tres"
+
+[deps]
+
+source_file="res://Cutscenes/meeting_the_don.dialogue"
+dest_files=["res://.godot/imported/meeting_the_don.dialogue-d67a12d526590815044bfa48095c3575.tres"]
+
+[params]
+
+defaults=true
