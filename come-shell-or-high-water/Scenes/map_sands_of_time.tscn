@@ -13,6 +13,8 @@
 [ext_resource type="Resource" uid="uid://bqct6ok8jg13k" path="res://Cutscenes/Memoir 05.dialogue" id="10_b1gdt"]
 [ext_resource type="Resource" uid="uid://bubg0al867waj" path="res://Cutscenes/Memoir 06.dialogue" id="11_02txh"]
 [ext_resource type="Resource" uid="uid://mcyfsggj4clk" path="res://Cutscenes/Memoir 07.dialogue" id="12_l7xll"]
+[ext_resource type="PackedScene" uid="uid://q0iagatpjpu8" path="res://Scenes/end_flee.tscn" id="14_02txh"]
+[ext_resource type="PackedScene" uid="uid://bnt2lsnk077eh" path="res://Scenes/end_wedding.tscn" id="15_l7xll"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lahq8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -197,6 +199,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.134453, 1, 1)
 
 [node name="ObjectArea" parent="Obj_Object7" index="0" unique_id=1446156801]
 dialogue_resource = ExtResource("12_l7xll")
+
+[node name="End_Flee" parent="." unique_id=1385018301 instance=ExtResource("14_02txh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 0, 30)
+
+[node name="End_Wedding" parent="." unique_id=154024107 instance=ExtResource("15_l7xll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 30)
 
 [connection signal="area_entered" from="Crabeau/Actionable" to="Crabeau" method="_on_actionable_area_entered"]
 
