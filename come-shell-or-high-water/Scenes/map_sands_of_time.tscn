@@ -9,23 +9,33 @@
 [ext_resource type="Resource" uid="uid://bggxfff8ceyst" path="res://Cutscenes/Memoir 01.dialogue" id="6_3yel8"]
 [ext_resource type="Resource" uid="uid://c7yn75oom05q8" path="res://Cutscenes/Memoir 02.dialogue" id="7_3yel8"]
 [ext_resource type="Resource" uid="uid://raaldiy42uj0" path="res://Cutscenes/Memoir 03.dialogue" id="8_ejudj"]
+[ext_resource type="Texture2D" uid="uid://uan0kuagxa36" path="res://Sprites/BottleCapMemory.png" id="8_u55gu"]
 [ext_resource type="Resource" uid="uid://csopx6gegp8ne" path="res://Cutscenes/Memoir 04.dialogue" id="9_a16np"]
 [ext_resource type="Resource" uid="uid://bqct6ok8jg13k" path="res://Cutscenes/Memoir 05.dialogue" id="10_b1gdt"]
+[ext_resource type="Texture2D" uid="uid://bis43sbtg2rjx" path="res://Sprites/bulletmemory.png" id="10_un6uj"]
 [ext_resource type="Resource" uid="uid://bubg0al867waj" path="res://Cutscenes/Memoir 06.dialogue" id="11_02txh"]
+[ext_resource type="Texture2D" uid="uid://n2d6qdeotei2" path="res://Sprites/CrabMeatMemory.png" id="12_e54yt"]
 [ext_resource type="Resource" uid="uid://mcyfsggj4clk" path="res://Cutscenes/Memoir 07.dialogue" id="12_l7xll"]
 [ext_resource type="PackedScene" uid="uid://q0iagatpjpu8" path="res://Scenes/end_flee.tscn" id="14_02txh"]
+[ext_resource type="Texture2D" uid="uid://df8mrlkriownx" path="res://Sprites/CrabTwineMemory.png" id="14_f00fb"]
 [ext_resource type="PackedScene" uid="uid://bnt2lsnk077eh" path="res://Scenes/end_wedding.tscn" id="15_l7xll"]
+[ext_resource type="Texture2D" uid="uid://b3kuoabvnyy10" path="res://Sprites/Eggmemory.png" id="16_2juk5"]
+[ext_resource type="Texture2D" uid="uid://chd86yuqcpcl4" path="res://Sprites/pamhletmemory.png" id="18_7hvse"]
+[ext_resource type="Texture2D" uid="uid://bjknkgcqiugya" path="res://Sprites/PlasticPackMemory.png" id="20_or6uk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lahq8"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
+sky_horizon_color = Color(0.9781892, 0.53387606, 0.26725373, 1)
+ground_bottom_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
+ground_horizon_color = Color(0.9781892, 0.53387606, 0.26725373, 1)
 
-[sub_resource type="Sky" id="Sky_7rdna"]
+[sub_resource type="Sky" id="Sky_qkphw"]
 sky_material = SubResource("ProceduralSkyMaterial_lahq8")
 
 [sub_resource type="Environment" id="Environment_bbrf3"]
 background_mode = 2
-sky = SubResource("Sky_7rdna")
+background_color = Color(0.33914968, 0.00037195443, 0.42817336, 1)
+sky = SubResource("Sky_qkphw")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -156,31 +166,44 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_3yel8")
 
 [node name="Obj_Object1" parent="." unique_id=688539386 instance=ExtResource("3_bbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.387043, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.70896, 1, -6.1799355)
 
 [node name="ObjectArea" parent="Obj_Object1" index="0" unique_id=1446156801]
 dialogue_resource = ExtResource("6_3yel8")
 
+[node name="AnimatedSprite3D" parent="Obj_Object1" index="1" unique_id=1187834936]
+texture = ExtResource("8_u55gu")
+
 [node name="Obj_Object2" parent="." unique_id=184413884 instance=ExtResource("3_bbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.619282, 1, 1)
+transform = Transform3D(0.6716689, -0.74085164, 0, 0.74085164, 0.6716689, 0, 0, 0, 1, -38.523, 0.8770008, 30)
 
 [node name="ObjectArea" parent="Obj_Object2" index="0" unique_id=1446156801]
 dialogue_resource = ExtResource("7_3yel8")
 
+[node name="AnimatedSprite3D" parent="Obj_Object2" index="1" unique_id=1187834936]
+texture = ExtResource("10_un6uj")
+
 [node name="Obj_Object3" parent="." unique_id=1134839201 instance=ExtResource("3_bbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.567855, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.231096, 1.5361996, 13.046864)
 
 [node name="ObjectArea" parent="Obj_Object3" index="0" unique_id=1446156801]
 dialogue_resource = ExtResource("8_ejudj")
 
+[node name="AnimatedSprite3D" parent="Obj_Object3" index="1" unique_id=1187834936]
+transform = Transform3D(0.9565188, 0.29167062, 0, -0.29167062, 0.9565188, 0, 0, 0, 1, 0, 0.1442213, 0)
+texture = ExtResource("12_e54yt")
+
 [node name="Obj_Object4" parent="." unique_id=805809008 instance=ExtResource("3_bbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.849927, 1, 1)
+transform = Transform3D(0.89841884, 0.43913963, 0, -0.43913963, 0.89841884, 0, 0, 0, 1, 10.85, 1.435, 32)
 
 [node name="ObjectArea" parent="Obj_Object4" index="0" unique_id=1446156801]
 dialogue_resource = ExtResource("9_a16np")
 
+[node name="AnimatedSprite3D" parent="Obj_Object4" index="1" unique_id=1187834936]
+texture = ExtResource("14_f00fb")
+
 [node name="Obj_Object5" parent="." unique_id=1174718623 instance=ExtResource("3_bbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.727295, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.727295, 1, -17.384518)
 
 [node name="ObjectArea" parent="Obj_Object5" index="0" unique_id=1446156801]
 dialogue_resource = ExtResource("10_b1gdt")
@@ -188,17 +211,27 @@ dialogue_resource = ExtResource("10_b1gdt")
 [node name="CollisionShape3D" parent="Obj_Object5/ObjectArea" index="0" unique_id=1388431034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02732277, 0, 0)
 
+[node name="AnimatedSprite3D" parent="Obj_Object5" index="1" unique_id=1187834936]
+transform = Transform3D(0.42187467, -0.9066542, 0, 0.9066542, 0.42187467, 0, 0, 0, 1, 0, -0.49243355, 0)
+texture = ExtResource("16_2juk5")
+
 [node name="Obj_Object6" parent="." unique_id=870829409 instance=ExtResource("3_bbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.99311, 1, 1)
+transform = Transform3D(0.7062918, 0.70792085, 0, -0.70792085, 0.7062918, 0, 0, 0, 1, 42.99311, 0.8130574, 19.500729)
 
 [node name="ObjectArea" parent="Obj_Object6" index="0" unique_id=1446156801]
 dialogue_resource = ExtResource("11_02txh")
 
+[node name="AnimatedSprite3D" parent="Obj_Object6" index="1" unique_id=1187834936]
+texture = ExtResource("18_7hvse")
+
 [node name="Obj_Object7" parent="." unique_id=856229376 instance=ExtResource("3_bbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.134453, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.012024, 1.8189082, -0.29327774)
 
 [node name="ObjectArea" parent="Obj_Object7" index="0" unique_id=1446156801]
 dialogue_resource = ExtResource("12_l7xll")
+
+[node name="AnimatedSprite3D" parent="Obj_Object7" index="1" unique_id=1187834936]
+texture = ExtResource("20_or6uk")
 
 [node name="End_Flee" parent="." unique_id=1385018301 instance=ExtResource("14_02txh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 0, 30)
