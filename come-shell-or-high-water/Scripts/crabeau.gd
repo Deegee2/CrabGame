@@ -8,6 +8,21 @@ var is_talking : bool = false
 @export var speed: float = 10.0
 @export var gravity: float = 9.8
 
+var min_x = -75  # The left edge of your 3D window
+var max_x = 75 # The right edge
+var min_z = -7.5 # background max
+var max_z = 7.5 # foreground max
+var clamping_buffer = 0.5
+
+# placeholder flags for each item
+var item_one_get : bool = false
+var item_two_get : bool = false
+var item_three_get : bool = false
+var item_four_get : bool = false
+var item_five_get : bool = false
+var item_six_get : bool = false
+var item_seven_get : bool = false
+
 func _ready():
 	DialogueManager.connect("dialogue_ended",finishedScene)
 
@@ -46,6 +61,10 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 		
+		
+		# Clamping Logic
+	position.x = clamp(position.x, min_x + clamping_buffer, max_x - clamping_buffer)
+	position.z = clamp(position.z, min_z + clamping_buffer, max_z - clamping_buffer)
 	move_and_slide()
 
 

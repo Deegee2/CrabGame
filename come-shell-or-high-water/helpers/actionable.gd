@@ -1,5 +1,6 @@
 extends Area3D
-@onready var crabeau: CharacterBody3D = $"../../Crabeau"
+
+@onready var crabeau: CharacterBody3D = $"../../../Crabeau"
 
 
 @export var dialogue_resource: DialogueResource

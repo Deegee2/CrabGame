@@ -63,14 +63,12 @@ environment = SubResource("Environment_bbrf3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 layers = 2
 mesh = SubResource("BoxMesh_pclsy")
+metadata/_edit_group_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sand" unique_id=1504173469]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sand/StaticBody3D" unique_id=2032494549]
 shape = SubResource("BoxShape3D_lahq8")
-
-[node name="Obj_Object" parent="." unique_id=688539386 instance=ExtResource("3_bbrf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1)
 
 [node name="Crabeau" type="CharacterBody3D" parent="." unique_id=1140375480]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -89,5 +87,28 @@ collision_mask = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crabeau/Actionable" unique_id=572835975]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_3yel8")
+
+[node name="Node3D" type="Node" parent="." unique_id=614788988]
+
+[node name="Obj_Object" parent="Node3D" unique_id=688539386 instance=ExtResource("3_bbrf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 1, 1)
+
+[node name="Obj_Object2" parent="Node3D" unique_id=821702586 instance=ExtResource("3_bbrf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.258554, 1, 1)
+
+[node name="Obj_Object3" parent="Node3D" unique_id=1339141962 instance=ExtResource("3_bbrf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.258554, 1, 1)
+
+[node name="Obj_Object4" parent="Node3D" unique_id=1086726402 instance=ExtResource("3_bbrf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.258554, 1, 1)
+
+[node name="Obj_Object5" parent="Node3D" unique_id=1131599290 instance=ExtResource("3_bbrf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.258554, 1, 1)
+
+[node name="Obj_Object6" parent="Node3D" unique_id=816313296 instance=ExtResource("3_bbrf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.258554, 1, 1)
+
+[node name="Obj_Object7" parent="Node3D" unique_id=500387680 instance=ExtResource("3_bbrf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.258554, 1, 1)
 
 [connection signal="area_entered" from="Crabeau/Actionable" to="Crabeau" method="_on_actionable_area_entered"]
