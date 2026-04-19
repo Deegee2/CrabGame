@@ -8,46 +8,85 @@
 
 [sub_resource type="Animation" id="Animation_xp3hu"]
 length = 0.001
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PortraitPosition:position:y")
+tracks/0/path = NodePath("PortraitPosition2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(720, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2120, 726.14)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PortraitPosition:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, 726.141)]
 }
 
 [sub_resource type="Animation" id="Animation_1kboi"]
 resource_name = "hide_character"
 length = 0.2
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PortraitPosition:position:y")
+tracks/0/path = NodePath("PortraitPosition:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(720, -0.25, 0, 0.0915459, -1.63977, 1220, -0.0348299, -325.265, 0.25, 0),
-"times": PackedFloat32Array(0, 0.2)
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(200, 720), Vector2(-200, 720)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PortraitPosition2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1600, 726.14), Vector2(2120, 726.14)]
 }
 
 [sub_resource type="Animation" id="Animation_wl3v2"]
 resource_name = "show_character"
 length = 0.2
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PortraitPosition:position:y")
+tracks/0/path = NodePath("PortraitPosition2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1220, -0.25, 0, 0.0426245, -368.062, 726.141, -0.1, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.2)
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2120, 726.14), Vector2(1600, 726.14)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PortraitPosition:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, 726.141), Vector2(200, 726.141)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gdt14"]
@@ -192,7 +231,11 @@ fit_content = true
 
 [node name="PortraitPosition" type="Marker2D" parent="." unique_id=41910176]
 unique_name_in_owner = true
-position = Vector2(203, 720)
+position = Vector2(-200, 726.141)
+
+[node name="PortraitPosition2" type="Marker2D" parent="." unique_id=1102594410]
+unique_name_in_owner = true
+position = Vector2(2120, 726.14)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1020208517]
 unique_name_in_owner = true

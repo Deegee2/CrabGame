@@ -11,6 +11,7 @@ const SKIP_ACTION = &"ui_cancel"
 
 @onready var balloon: Control = %Balloon
 @onready var portrait_position: Marker2D = %PortraitPosition
+@onready var portrait_position_2: Marker2D = %PortraitPosition2
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
@@ -20,6 +21,7 @@ const SKIP_ACTION = &"ui_cancel"
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 var portrait: BasePortrait
+var portrait2: BasePortrait
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -32,6 +34,8 @@ var is_waiting_for_input: bool = false
 
 ## See if we are running a long mutation and should hide the balloon
 var will_hide_balloon: bool = false
+
+var are_characters_set: bool = false
 
 ## The current line
 var dialogue_line: DialogueLine:
@@ -74,10 +78,13 @@ var dialogue_line: DialogueLine:
 		else:
 			notification_balloon.show()
 			notification_label.text = "[center]%s" % dialogue_line.text
-
-		if is_changing_character:
-			await hide_character()
-			await show_character(dialogue_line.character)
+		
+		#if is_changing_character:
+			#await hide_character()
+			#await show_character(dialogue_line.character)
+			
+		if GlobalVariables.characters_in_scene.size() > 0 and !are_characters_set:
+			await show_characters(GlobalVariables.characters_in_scene[0],GlobalVariables.characters_in_scene[1])
 
 		if has_character:
 			portrait.emote(dialogue_line.tags)
@@ -128,6 +135,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 func start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array = []) -> void:
 	if not is_node_ready():
 		await ready
+		
 	temporary_game_states =  [self] + extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
@@ -142,22 +150,31 @@ func next(next_id: String) -> void:
 #region Helpers
 
 
-func hide_character() -> void:
-	if is_instance_valid(portrait):
+func hide_characters() -> void:
+	if is_instance_valid(portrait) and is_instance_valid(portrait2):
 		animation_player.play("hide_character")
 		await animation_player.animation_finished
 		portrait_position.remove_child(portrait)
+		portrait_position_2.remove_child(portrait)
 		portrait.queue_free()
+		portrait2.queue_free()
 
 
-func show_character(character_name: String) -> void:
+func show_characters(character_name: String, character_name2:String) -> void:
 	if not character_name: return
-
+	
 	var portrait_scene: PackedScene = load("res://characters/%s/portrait.tscn" % character_name.to_lower())
 	portrait = portrait_scene.instantiate() as BasePortrait
 	portrait_position.add_child(portrait)
+	
+	var portrait_scene_2: PackedScene = load("res://characters/%s/portrait.tscn" % character_name2.to_lower())
+	portrait2 = portrait_scene_2.instantiate() as BasePortrait
+	portrait_position_2.add_child(portrait2)
+	
 	animation_player.play("show_character")
 	await animation_player.animation_finished
+	
+	are_characters_set = true
 
 
 #endregion

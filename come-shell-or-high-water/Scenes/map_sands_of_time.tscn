@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://beaj284824h8q"]
 
+[ext_resource type="Script" uid="uid://c0tfs53ebs85p" path="res://Scripts/map_sands_of_time.gd" id="1_5x2dh"]
 [ext_resource type="Script" uid="uid://c86k3l5ex5w4w" path="res://Scenes/camera_3d.gd" id="2_7rdna"]
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="3_bbrf3"]
+[ext_resource type="Resource" uid="uid://bggxfff8ceyst" path="res://Cutscenes/testdia2.dialogue" id="3_irdsc"]
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="3_k5hfa"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="4_irdsc"]
+[ext_resource type="Shader" path="res://Shaders/BoundedBattleBackground.tres" id="7_0x3nu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lahq8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -40,9 +43,66 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_3yel8"]
 radius = 0.7332694
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3yel8"]
+shader = ExtResource("7_0x3nu")
+shader_parameter/snes_transparency = false
+shader_parameter/gba_transparency = false
+shader_parameter/horizontal_scan_line = false
+shader_parameter/vertical_scan_line = false
+shader_parameter/enable_palette_cycling = false
+shader_parameter/sprite_scroll_direction = Vector2(0, 0)
+shader_parameter/sprite_scroll_speed = 0.01
+shader_parameter/gba_transparency_scroll_direction = Vector2(0, 0)
+shader_parameter/gba_transparency_scroll_speed = 0.01
+shader_parameter/gba_transparency_value = 0.5
+shader_parameter/horizontal_wave_amplitude = 5.0
+shader_parameter/horizontal_wave_frequency = 5.0
+shader_parameter/horizontal_wave_speed = 1.0
+shader_parameter/vertical_wave_amplitude = 0.0
+shader_parameter/vertical_wave_frequency = 0.0
+shader_parameter/vertical_wave_speed = 1.0
+shader_parameter/horizontal_deform_amplitude = 0.0
+shader_parameter/horizontal_deform_frequency = 0.0
+shader_parameter/horizontal_deform_speed = 1.0
+shader_parameter/vertical_deform_amplitude = 0.0
+shader_parameter/vertical_deform_frequency = 0.0
+shader_parameter/vertical_deform_speed = 1.0
+shader_parameter/width = 0.0
+shader_parameter/height = 0.0
+shader_parameter/palette_cycling_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejudj"]
+shader = ExtResource("7_0x3nu")
+shader_parameter/snes_transparency = false
+shader_parameter/gba_transparency = false
+shader_parameter/horizontal_scan_line = false
+shader_parameter/vertical_scan_line = false
+shader_parameter/enable_palette_cycling = false
+shader_parameter/sprite_scroll_direction = Vector2(0, 0)
+shader_parameter/sprite_scroll_speed = 0.01
+shader_parameter/gba_transparency_scroll_direction = Vector2(0, 0)
+shader_parameter/gba_transparency_scroll_speed = 0.01
+shader_parameter/gba_transparency_value = 0.5
+shader_parameter/horizontal_wave_amplitude = 5.0
+shader_parameter/horizontal_wave_frequency = 5.0
+shader_parameter/horizontal_wave_speed = 1.0
+shader_parameter/vertical_wave_amplitude = 0.0
+shader_parameter/vertical_wave_frequency = 0.0
+shader_parameter/vertical_wave_speed = 1.0
+shader_parameter/horizontal_deform_amplitude = 0.0
+shader_parameter/horizontal_deform_frequency = 0.0
+shader_parameter/horizontal_deform_speed = 1.0
+shader_parameter/vertical_deform_amplitude = 0.0
+shader_parameter/vertical_deform_frequency = 0.0
+shader_parameter/vertical_deform_speed = 1.0
+shader_parameter/width = 0.0
+shader_parameter/height = 0.0
+shader_parameter/palette_cycling_speed = 0.1
+
 [node name="Sands of Time" type="Control" unique_id=1820742018]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_5x2dh")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=348510825]
 transform = Transform3D(1, 0, 0, 0, 0.8567175, 0.5157858, 0, -0.5157858, 0.8567175, 0, 4.817614, 6.746464)
@@ -69,6 +129,12 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sand/StaticBody3D" unique_id=2032494549]
 shape = SubResource("BoxShape3D_lahq8")
+
+[node name="Obj_Object" parent="." unique_id=688539386 instance=ExtResource("3_bbrf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1)
+
+[node name="ObjectArea" parent="Obj_Object" index="0" unique_id=1446156801]
+dialogue_resource = ExtResource("3_irdsc")
 
 [node name="Crabeau" type="CharacterBody3D" parent="." unique_id=1140375480]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -110,5 +176,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.258554, 1, 1)
 
 [node name="Obj_Object7" parent="Node3D" unique_id=500387680 instance=ExtResource("3_bbrf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.258554, 1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=934787917]
+material = SubResource("ShaderMaterial_3yel8")
+position = Vector2(959, 155.5)
+scale = Vector2(14.890625, 2.4140625)
+texture = ExtResource("4_irdsc")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=789408397]
+material = SubResource("ShaderMaterial_ejudj")
+layout_mode = 0
+offset_top = 702.0
+offset_right = 1915.0
+offset_bottom = 1178.0
+texture = ExtResource("4_irdsc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=262075732]
+visible = false
+material = SubResource("ShaderMaterial_ejudj")
+layout_mode = 0
+offset_right = 1915.0
+offset_bottom = 369.0
+texture = ExtResource("4_irdsc")
 
 [connection signal="area_entered" from="Crabeau/Actionable" to="Crabeau" method="_on_actionable_area_entered"]
+
+[editable path="Obj_Object"]
