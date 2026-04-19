@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0tfs53ebs85p" path="res://Scripts/map_sands_of_time.gd" id="1_u2ddk"]
 [ext_resource type="Script" uid="uid://c86k3l5ex5w4w" path="res://Scenes/camera_3d.gd" id="2_wlm0s"]
-[ext_resource type="Texture2D" uid="uid://c5psvjoudgbp7" path="res://Livingroomflat.png" id="3_uowwj"]
+[ext_resource type="Texture2D" uid="uid://c5psvjoudgbp7" path="res://Textures/Livingroomflat.png" id="3_uowwj"]
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="4_ho5e3"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="5_kmjtx"]
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="6_guks8"]
@@ -89,7 +89,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_lahq8")
 
 [node name="Crabeau" type="CharacterBody3D" parent="." unique_id=1140375480]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.533929, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1373672, 0)
 script = ExtResource("4_ho5e3")
 min_x = -15
 max_x = 15

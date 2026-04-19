@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0tfs53ebs85p" path="res://Scripts/map_sands_of_time.gd" id="1_5x2dh"]
 [ext_resource type="Script" uid="uid://c86k3l5ex5w4w" path="res://Scenes/camera_3d.gd" id="2_7rdna"]
-[ext_resource type="Texture2D" uid="uid://ua84jtge1kt8" path="res://oceantexture.png" id="3_a16np"]
+[ext_resource type="Texture2D" uid="uid://ua84jtge1kt8" path="res://Textures/oceantexture.png" id="3_a16np"]
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="3_bbrf3"]
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="3_k5hfa"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="4_irdsc"]

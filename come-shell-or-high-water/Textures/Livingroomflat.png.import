@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ua84jtge1kt8"
-path.s3tc="res://.godot/imported/oceantexture.png-1e36f2159e9e5d2aa816d31f406c6d2f.s3tc.ctex"
+uid="uid://c5psvjoudgbp7"
+path.s3tc="res://.godot/imported/Livingroomflat.png-3195735d3a8300d9181ff290a1d34235.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://oceantexture.png"
-dest_files=["res://.godot/imported/oceantexture.png-1e36f2159e9e5d2aa816d31f406c6d2f.s3tc.ctex"]
+source_file="res://Textures/Livingroomflat.png"
+dest_files=["res://.godot/imported/Livingroomflat.png-3195735d3a8300d9181ff290a1d34235.s3tc.ctex"]
 
 [params]
 
