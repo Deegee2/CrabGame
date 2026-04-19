@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0tfs53ebs85p" path="res://Scripts/map_sands_of_time.gd" id="1_u2ddk"]
 [ext_resource type="Script" uid="uid://c86k3l5ex5w4w" path="res://Scenes/camera_3d.gd" id="2_wlm0s"]
+[ext_resource type="Texture2D" uid="uid://ua84jtge1kt8" path="res://Textures/oceantexture.png" id="3_66508"]
 [ext_resource type="Texture2D" uid="uid://71f10w0hx221" path="res://Textures/Livingroomflatabsentcredits.png" id="3_wasy2"]
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="4_ho5e3"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="5_kmjtx"]
@@ -12,19 +13,21 @@
 [ext_resource type="PackedScene" uid="uid://b00sjdbicghkk" path="res://Scenes/SC_leavehouse.tscn" id="9_ctdjc"]
 [ext_resource type="Texture2D" uid="uid://ctp6eu18tll3h" path="res://Textures/Tuxedosingle.png" id="10_sln5i"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ctdjc"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sln5i"]
 sky_top_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
 sky_horizon_color = Color(0.9781892, 0.53387606, 0.26725373, 1)
+sky_cover = ExtResource("3_66508")
+sky_cover_modulate = Color(0.6156863, 0.5254902, 0.10980392, 0.60784316)
 ground_bottom_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
 ground_horizon_color = Color(0.9781892, 0.53387606, 0.26725373, 1)
 
-[sub_resource type="Sky" id="Sky_7rdna"]
-sky_material = SubResource("ProceduralSkyMaterial_ctdjc")
+[sub_resource type="Sky" id="Sky_qkphw"]
+sky_material = SubResource("ProceduralSkyMaterial_sln5i")
 
-[sub_resource type="Environment" id="Environment_qnmxq"]
+[sub_resource type="Environment" id="Environment_xkdh4"]
 background_mode = 2
 background_color = Color(0.33914968, 0.00037195443, 0.42817336, 1)
-sky = SubResource("Sky_7rdna")
+sky = SubResource("Sky_qkphw")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -75,8 +78,8 @@ smoothness = 0.03
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=128602024]
-environment = SubResource("Environment_qnmxq")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2031642641]
+environment = SubResource("Environment_xkdh4")
 
 [node name="Wall Image" type="Sprite3D" parent="." unique_id=911666212]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.77798, -8.4)

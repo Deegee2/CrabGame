@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="3_bbrf3"]
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="3_k5hfa"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="4_irdsc"]
+[ext_resource type="Texture2D" uid="uid://c25m2c56h8stk" path="res://Textures/sandtexture.png" id="4_un6uj"]
 [ext_resource type="Resource" uid="uid://bggxfff8ceyst" path="res://Cutscenes/Memoir 01.dialogue" id="6_3yel8"]
 [ext_resource type="Resource" uid="uid://c7yn75oom05q8" path="res://Cutscenes/Memoir 02.dialogue" id="7_3yel8"]
 [ext_resource type="Resource" uid="uid://raaldiy42uj0" path="res://Cutscenes/Memoir 03.dialogue" id="8_ejudj"]
@@ -26,16 +27,18 @@
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lahq8"]
 sky_top_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
 sky_horizon_color = Color(0.9781892, 0.53387606, 0.26725373, 1)
+sky_cover = ExtResource("3_a16np")
+sky_cover_modulate = Color(0.6156863, 0.5254902, 0.10980392, 0.60784316)
 ground_bottom_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
 ground_horizon_color = Color(0.9781892, 0.53387606, 0.26725373, 1)
 
-[sub_resource type="Sky" id="Sky_qkphw"]
+[sub_resource type="Sky" id="Sky_un6uj"]
 sky_material = SubResource("ProceduralSkyMaterial_lahq8")
 
 [sub_resource type="Environment" id="Environment_bbrf3"]
 background_mode = 2
 background_color = Color(0.33914968, 0.00037195443, 0.42817336, 1)
-sky = SubResource("Sky_qkphw")
+sky = SubResource("Sky_un6uj")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -43,7 +46,6 @@ glow_enabled = true
 transparency = 1
 cull_mode = 2
 albedo_texture = ExtResource("3_a16np")
-uv1_scale = Vector3(2, 1, 1)
 
 [sub_resource type="Animation" id="Animation_a16np"]
 length = 0.001
@@ -82,6 +84,10 @@ _data = {
 &"RESET": SubResource("Animation_a16np"),
 &"ocean_scroll": SubResource("Animation_b1gdt")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_un6uj"]
+albedo_texture = ExtResource("4_un6uj")
+uv1_scale = Vector3(2, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pclsy"]
 size = Vector3(150, 1, 100)
@@ -126,7 +132,7 @@ shadow_enabled = true
 environment = SubResource("Environment_bbrf3")
 
 [node name="Sea" type="Sprite3D" parent="." unique_id=911666212]
-transform = Transform3D(15.012589, 0, 0, 0, -4.2819295e-07, -1.7741921, 0, 9.795913, -7.75524e-08, 0, -0.5, -77.042)
+transform = Transform3D(21.835936, 0, 0, 0, -1.2903415e-06, -1.774192, 0, 29.519571, -7.755239e-08, 0, -0.5, -77.042)
 material_override = SubResource("StandardMaterial3D_u5cnb")
 transparent = false
 texture = ExtResource("3_a16np")
@@ -136,8 +142,9 @@ libraries/ = SubResource("AnimationLibrary_02txh")
 autoplay = &"ocean_scroll"
 
 [node name="Sand" type="MeshInstance3D" parent="." unique_id=1052407425]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 30)
+transform = Transform3D(1.9988861, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 30)
 layers = 2
+material_override = SubResource("StandardMaterial3D_un6uj")
 mesh = SubResource("BoxMesh_pclsy")
 metadata/_edit_group_ = true
 
