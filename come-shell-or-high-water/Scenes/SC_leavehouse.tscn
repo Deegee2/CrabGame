@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://b00sjdbicghkk"]
+[gd_scene format=3 uid="uid://dnfpq3pwylhgk"]
 
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://helpers/actionable.tscn" id="1_ft3rh"]
+[ext_resource type="Script" uid="uid://dxv5wu2bod651" path="res://Scripts/start_game.gd" id="2_b06wa"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="2_m4fo0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xgobo"]
@@ -17,13 +18,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f41d1"]
+albedo_color = Color(1, 1, 0.43529412, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b06wa"]
+gravity = Vector3(0, 9.8, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_004be"]
+size = Vector3(1, 1, 100)
+
 [node name="Obj_Object" type="Node3D" unique_id=688539386]
 
 [node name="SC_LeaveHouse" parent="." unique_id=1446156801 instance=ExtResource("1_ft3rh")]
 collision_mask = 1
+script = ExtResource("2_b06wa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SC_LeaveHouse" unique_id=1388431034]
 shape = SubResource("BoxShape3D_xgobo")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1595472362]
 sprite_frames = SubResource("SpriteFrames_dq3cv")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=328056412]
+material_override = SubResource("StandardMaterial3D_f41d1")
+emitting = false
+amount = 6
+amount_ratio = 0.4
+lifetime = 1.5
+explosiveness = 0.17
+process_material = SubResource("ParticleProcessMaterial_b06wa")
+draw_pass_1 = SubResource("BoxMesh_004be")
