@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0tfs53ebs85p" path="res://Scripts/map_sands_of_time.gd" id="1_5x2dh"]
 [ext_resource type="Script" uid="uid://c86k3l5ex5w4w" path="res://Scenes/camera_3d.gd" id="2_7rdna"]
+[ext_resource type="Texture2D" uid="uid://ua84jtge1kt8" path="res://oceantexture.png" id="3_a16np"]
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="3_bbrf3"]
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="3_k5hfa"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="4_irdsc"]
@@ -27,14 +28,54 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5cnb"]
-albedo_texture = ExtResource("4_irdsc")
-uv1_offset = Vector3(0, 0, 1)
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("3_a16np")
+uv1_scale = Vector3(2, 1, 1)
+
+[sub_resource type="Animation" id="Animation_a16np"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material_override:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b1gdt"]
+resource_name = "ocean_scroll"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material_override:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_02txh"]
+_data = {
+&"RESET": SubResource("Animation_a16np"),
+&"ocean_scroll": SubResource("Animation_b1gdt")
+}
 
 [sub_resource type="BoxMesh" id="BoxMesh_pclsy"]
-size = Vector3(150, 1, 15)
+size = Vector3(150, 1, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lahq8"]
-size = Vector3(150, 1, 15)
+size = Vector3(150, 1, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5x2dh"]
 animations = [{
@@ -58,7 +99,7 @@ anchors_preset = 0
 script = ExtResource("1_5x2dh")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=348510825]
-transform = Transform3D(1, 0, 0, 0, 0.8567175, 0.5157858, 0, -0.5157858, 0.8567175, 0, 4.817614, 6.746464)
+transform = Transform3D(1, 0, 0, 0, 0.9057834, 0.423741, 0, -0.423741, 0.9057834, 0, 4.014817, 6.746464)
 current = true
 script = ExtResource("2_7rdna")
 target_path = NodePath("../Crabeau")
@@ -73,17 +114,23 @@ shadow_enabled = true
 environment = SubResource("Environment_bbrf3")
 
 [node name="Sea" type="Sprite3D" parent="." unique_id=911666212]
-transform = Transform3D(253.09048, 0, 0, 0, -9.5021305, 1.0678048, 0, -109.07028, -0.09302644, 0, -6.253992, -77.04184)
+transform = Transform3D(15.012589, 0, 0, 0, -4.2819295e-07, -1.7741921, 0, 9.795913, -7.75524e-08, 0, -0.5, -77.042)
 material_override = SubResource("StandardMaterial3D_u5cnb")
-texture = ExtResource("4_irdsc")
+transparent = false
+texture = ExtResource("3_a16np")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sea" unique_id=632216761]
+libraries/ = SubResource("AnimationLibrary_02txh")
+autoplay = &"ocean_scroll"
 
 [node name="Sand" type="MeshInstance3D" parent="." unique_id=1052407425]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 30)
 layers = 2
 mesh = SubResource("BoxMesh_pclsy")
 metadata/_edit_group_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sand" unique_id=1504173469]
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sand/StaticBody3D" unique_id=2032494549]
 shape = SubResource("BoxShape3D_lahq8")

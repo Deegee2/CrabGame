@@ -10,9 +10,9 @@ var is_talking : bool = false
 
 var min_x = -75  # The left edge of your 3D window
 var max_x = 75 # The right edge
-var min_z = -7.5 # background max
-var max_z = 7.5 # foreground max
-var clamping_buffer = 0.5
+var min_z = -20 # background max
+var max_z = 35 # foreground max
+var clamping_buffer = 0.8
 
 # placeholder flags for each item
 var item_one_get : bool = false
