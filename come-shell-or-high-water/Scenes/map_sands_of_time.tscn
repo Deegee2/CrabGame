@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="3_bbrf3"]
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="3_k5hfa"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="4_irdsc"]
-[ext_resource type="Resource" uid="uid://bggxfff8ceyst" path="res://Cutscenes/Memoir 01.dialogue" id="6_3yel8"]
+[ext_resource type="Resource" uid="uid://cuergpdmnpmoy" path="res://Cutscenes/injail.dialogue" id="7_02txh"]
 [ext_resource type="Resource" uid="uid://c7yn75oom05q8" path="res://Cutscenes/Memoir 02.dialogue" id="7_3yel8"]
 [ext_resource type="Resource" uid="uid://raaldiy42uj0" path="res://Cutscenes/Memoir 03.dialogue" id="8_ejudj"]
 [ext_resource type="Resource" uid="uid://csopx6gegp8ne" path="res://Cutscenes/Memoir 04.dialogue" id="9_a16np"]
@@ -159,7 +159,7 @@ shape = SubResource("SphereShape3D_3yel8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.387043, 1, 1)
 
 [node name="ObjectArea" parent="Obj_Object1" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("6_3yel8")
+dialogue_resource = ExtResource("7_02txh")
 
 [node name="Obj_Object2" parent="." unique_id=184413884 instance=ExtResource("3_bbrf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.619282, 1, 1)

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cuergpdmnpmoy"
+path="res://.godot/imported/injail.dialogue-08b177319ea9e6c7cce6434858ef8345.tres"
+
+[deps]
+
+source_file="res://Cutscenes/injail.dialogue"
+dest_files=["res://.godot/imported/injail.dialogue-08b177319ea9e6c7cce6434858ef8345.tres"]
+
+[params]
+
+defaults=true

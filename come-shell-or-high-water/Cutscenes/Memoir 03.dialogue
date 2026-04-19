@@ -4,4 +4,5 @@ do add_characters("Coco")
 Coco: Memoir 03!
 Nathan: Yup, memoir 03!
 do erase_characters()
+set GlobalVariables.memories_acquired += 1
 => END
