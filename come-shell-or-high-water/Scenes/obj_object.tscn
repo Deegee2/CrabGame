@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://helpers/actionable.tscn" id="1_08qdb"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="2_qflgy"]
-[ext_resource type="Resource" uid="uid://df8q6dyu86k8e" path="res://Cutscenes/TestDia.dialogue" id="2_sw4v7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sw4v7"]
 
@@ -21,7 +20,6 @@ animations = [{
 
 [node name="ObjectArea" parent="." unique_id=1446156801 instance=ExtResource("1_08qdb")]
 collision_mask = 1
-dialogue_resource = ExtResource("2_sw4v7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectArea" unique_id=1388431034]
 shape = SubResource("SphereShape3D_sw4v7")

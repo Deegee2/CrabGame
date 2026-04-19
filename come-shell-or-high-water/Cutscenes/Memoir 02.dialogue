@@ -1,7 +1,7 @@
 ~ start
 do add_characters("Nathan")
 do add_characters("Coco")
-Coco: Hi Nathan.
-Nathan: Hi Coco.
+Coco: Memoir 02!
+Nathan: Yup, memoir 02!
 do erase_characters()
 => END

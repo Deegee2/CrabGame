@@ -1,0 +1,7 @@
+~ start
+do add_characters("Nathan")
+do add_characters("Coco")
+Coco: Memoir 04!
+Nathan: Yup, memoir 04!
+do erase_characters()
+=> END

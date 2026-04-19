@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c7yn75oom05q8"
+path="res://.godot/imported/Memoir 02.dialogue-935a7cba3ffcd79b5ae571f0c34186c5.tres"
+
+[deps]
+
+source_file="res://Cutscenes/Memoir 02.dialogue"
+dest_files=["res://.godot/imported/Memoir 02.dialogue-935a7cba3ffcd79b5ae571f0c34186c5.tres"]
+
+[params]
+
+defaults=true

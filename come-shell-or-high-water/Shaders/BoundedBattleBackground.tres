@@ -4,7 +4,7 @@
 code = "shader_type canvas_item;
 
 // Bounding Battle Backgound shader by Youkuri, this shader is under the Creative Commons license so feel free to use it to your heart contents! No need of crediting or anything.
-// NOTE: Filter *does* matter when it comes to palette cycling, Filtered sprites makes it look smoother and Unfiltered makes them change in an instant
+// NOTE: Filter *does* matter when it comes palette cycling, Filtered sprites makes it look smoother and Unfiltered makes them change in an instant
 
 
 
