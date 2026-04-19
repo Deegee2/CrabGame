@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b00sjdbicghkk"]
+
+[ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://helpers/actionable.tscn" id="1_ft3rh"]
+[ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="2_m4fo0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgobo"]
+size = Vector3(1, 1, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dq3cv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m4fo0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Obj_Object" type="Node3D" unique_id=688539386]
+
+[node name="SC_LeaveHouse" parent="." unique_id=1446156801 instance=ExtResource("1_ft3rh")]
+collision_mask = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SC_LeaveHouse" unique_id=1388431034]
+shape = SubResource("BoxShape3D_xgobo")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1595472362]
+sprite_frames = SubResource("SpriteFrames_dq3cv")
