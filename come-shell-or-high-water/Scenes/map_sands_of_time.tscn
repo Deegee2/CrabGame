@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://beaj284824h8q"]
 
+[ext_resource type="Script" uid="uid://c0tfs53ebs85p" path="res://Scripts/map_sands_of_time.gd" id="1_5x2dh"]
 [ext_resource type="Script" uid="uid://c86k3l5ex5w4w" path="res://Scenes/camera_3d.gd" id="2_7rdna"]
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="3_bbrf3"]
+[ext_resource type="Resource" uid="uid://bggxfff8ceyst" path="res://Cutscenes/testdia2.dialogue" id="3_irdsc"]
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="3_k5hfa"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="4_irdsc"]
 
@@ -43,6 +45,7 @@ radius = 0.7332694
 [node name="Sands of Time" type="Control" unique_id=1820742018]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_5x2dh")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=348510825]
 transform = Transform3D(1, 0, 0, 0, 0.8567175, 0.5157858, 0, -0.5157858, 0.8567175, 0, 4.817614, 6.746464)
@@ -72,6 +75,9 @@ shape = SubResource("BoxShape3D_lahq8")
 [node name="Obj_Object" parent="." unique_id=688539386 instance=ExtResource("3_bbrf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1)
 
+[node name="ObjectArea" parent="Obj_Object" index="0" unique_id=1446156801]
+dialogue_resource = ExtResource("3_irdsc")
+
 [node name="Crabeau" type="CharacterBody3D" parent="." unique_id=1140375480]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("3_k5hfa")
@@ -91,3 +97,5 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_3yel8")
 
 [connection signal="area_entered" from="Crabeau/Actionable" to="Crabeau" method="_on_actionable_area_entered"]
+
+[editable path="Obj_Object"]
