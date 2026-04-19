@@ -111,6 +111,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_av2hy")
 
+[node name="TextureRect" type="TextureRect" parent="Balloon" unique_id=393809479]
+layout_mode = 0
+offset_right = 1888.0
+offset_bottom = 1071.0
+
 [node name="Panel" type="Panel" parent="Balloon" unique_id=1492152854]
 clip_children = 2
 layout_mode = 1

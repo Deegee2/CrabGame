@@ -6,6 +6,8 @@ const NEXT_ACTION = &"ui_accept"
 ## The action to use to skip typing the dialogue
 const SKIP_ACTION = &"ui_cancel"
 
+@onready var background: TextureRect = $Balloon/TextureRect
+
 
 @export var talk_sound: AudioStream
 
@@ -82,7 +84,9 @@ var dialogue_line: DialogueLine:
 		#if is_changing_character:
 			#await hide_character()
 			#await show_character(dialogue_line.character)
-			
+		if GlobalVariables.current_background != "":
+			background.set_texture(load(GlobalVariables.current_background))
+		
 		if GlobalVariables.characters_in_scene.size() > 0 and !are_characters_set:
 			await show_characters(GlobalVariables.characters_in_scene[0],GlobalVariables.characters_in_scene[1])
 

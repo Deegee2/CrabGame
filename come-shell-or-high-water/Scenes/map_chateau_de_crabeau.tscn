@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="4_ho5e3"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="5_kmjtx"]
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="6_guks8"]
-[ext_resource type="Resource" uid="uid://bggxfff8ceyst" path="res://Cutscenes/Memoir 01.dialogue" id="7_10ed2"]
+[ext_resource type="Resource" uid="uid://raaldiy42uj0" path="res://Cutscenes/Memoir 03.dialogue" id="7_wasy2"]
 [ext_resource type="Texture2D" uid="uid://bggjnmi2ik6fm" path="res://Textures/CreditsWhiteboard.png" id="8_66508"]
 [ext_resource type="Resource" uid="uid://c7yn75oom05q8" path="res://Cutscenes/Memoir 02.dialogue" id="8_dqiu4"]
-[ext_resource type="PackedScene" uid="uid://b00sjdbicghkk" path="res://Scenes/SC_leavehouse.tscn" id="9_ctdjc"]
+[ext_resource type="PackedScene" uid="uid://dnfpq3pwylhgk" path="res://Scenes/SC_leavehouse.tscn" id="9_ctdjc"]
 [ext_resource type="Texture2D" uid="uid://ctp6eu18tll3h" path="res://Textures/Tuxedosingle.png" id="10_sln5i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ctdjc"]
@@ -124,7 +124,7 @@ shape = SubResource("SphereShape3D_3yel8")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.101421, 5.0153155, -7.960298)
 
 [node name="ObjectArea" parent="Obj_Object1" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("7_10ed2")
+dialogue_resource = ExtResource("7_wasy2")
 
 [node name="CollisionShape3D" parent="Obj_Object1/ObjectArea" index="0" unique_id=1388431034]
 transform = Transform3D(2.395, 0, 0, 0, 2.395, 0, 0, 0, 2.395, 0, 0, 0)

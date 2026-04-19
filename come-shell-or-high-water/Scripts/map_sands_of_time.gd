@@ -11,8 +11,8 @@ func checkIfEnding(resource) -> void:
 		end_flee.start_particles()
 		end_wedding.start_particles()
 
-func _process(delta: float) -> void:
-	print(GlobalVariables.memories_acquired)
+#func _process(delta: float) -> void:
+	#print(GlobalVariables.memories_acquired)
 
 func add_characters(character_name):
 	GlobalVariables.characters_in_scene.append(character_name)

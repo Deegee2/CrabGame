@@ -1,6 +1,7 @@
 ~ start
 do add_characters("Nathan")
 do add_characters("Coco")
+set GlobalVariables.current_background = "res://locations/Crabbo_Shack.png"
 Coco: Memoir 03!
 Nathan: Yup, memoir 03!
 do erase_characters()
