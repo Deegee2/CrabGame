@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bpku40w57bff6"]
+[gd_scene format=3 uid="uid://bi728r5krivcj"]
 
 [ext_resource type="Script" uid="uid://c0tfs53ebs85p" path="res://Scripts/map_sands_of_time.gd" id="1_u2ddk"]
 [ext_resource type="Script" uid="uid://c86k3l5ex5w4w" path="res://Scenes/camera_3d.gd" id="2_wlm0s"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="6_guks8"]
 [ext_resource type="Resource" uid="uid://bggxfff8ceyst" path="res://Cutscenes/Memoir 01.dialogue" id="7_10ed2"]
 [ext_resource type="Resource" uid="uid://c7yn75oom05q8" path="res://Cutscenes/Memoir 02.dialogue" id="8_dqiu4"]
-[ext_resource type="PackedScene" uid="uid://b00sjdbicghkk" path="res://Scenes/SC_leavehouse.tscn" id="9_ctdjc"]
+[ext_resource type="PackedScene" uid="uid://dnfpq3pwylhgk" path="res://Scenes/SC_leavehouse.tscn" id="9_ctdjc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lahq8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
