@@ -4,6 +4,8 @@ extends Control
 
 
 func _ready() -> void:
+	GlobalVariables.memories_acquired = 0
+	GlobalVariables.start_items_acquired = 0
 	DialogueManager.connect("dialogue_ended",checkIfEnding)
 
 func checkIfEnding(resource) -> void:
