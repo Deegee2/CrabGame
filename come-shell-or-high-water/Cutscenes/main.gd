@@ -14,6 +14,8 @@ const STEP_END = "end"
 
 @export var dialogue_resource: DialogueResource
 
+var dialogue_ended = false
+
 ## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
 
@@ -55,15 +57,22 @@ func _ready() -> void:
 	responses_menu.hide()
 
 	_dialogue_line = await dialogue_resource.get_next_dialogue_line("start")
+	
+	animation_player.play("RESET")
+	DialogueManager.connect("dialogue_ended",restartGame)
 
 
 #region Dialogue
 
+func restartGame(resource):
+	dialogue_ended = true
+	get_tree().change_scene_to_file("res://Scenes/map_chateau_de_crabeau.tscn")
 
 func _apply_dialogue_line() -> void:
 	_is_waiting_for_input = false
 	focus_mode = Control.FOCUS_ALL
-	grab_focus()
+	if !dialogue_ended:
+		grab_focus()
 
 	if not is_instance_valid(_dialogue_line):
 		character_label.text = ""
@@ -211,3 +220,10 @@ func _on_responses_menu_response_selected(response: Variant) -> void:
 
 
 #endregion
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	pass
+	#if anim_name == "fade_in":
+		#animation_player.play("RESET")
+		#DialogueManager.connect("dialogue_ended",restartGame)
