@@ -1,0 +1,25 @@
+~ start
+do add_characters("Clarence")
+do add_characters("Don")
+set GlobalVariables.current_background = "res://locations/Art_Gallery.png"
+Don Craw-Daddy: Ah, Crabbo. Have you been eating well?
+Clarence: The only nourishment I need is the love of your daughter.
+Don Craw-Daddy: ... 
+Clarence: Your Donliness, I have come to you today to ask for your daughter’s Claw in marriage.
+Don Craw-Daddy: ... 
+Clarence: She has been my guiding current for years now. Before I met her, I could only think of my next meal. The next Cake Run. But now, I have a dream, and someone to share it with.
+Don Craw-Daddy: ... 
+Clarence: And not just one person to share it with. Hers will not be the only mouth I want to feed. 
+Don Craw-Daddy: ... 
+Clarence: Do I have your blessing, your Donliness? It would mean the world to Crabb-
+Don Craw-Daddy: DON’T YOU SPEAK HER NAME. 
+Crabbo: ...
+Don Craw-Daddy: Do you really think I would allow my precious daughter to elope with a filthy Cake-eater?
+Clarence: Y-your Donli-...SIR! I have never once consumed the flesh of our brethren.
+Don Craw-Daddy: But you carried it on your back, feeding it to those filthy Turtles. And it didn’t stop there, our own people have been feasting on it as well. Barbarians!
+Clarence: ...I did what I had to do to survive, but at least I didn’t feed it to your daughter when she asked for some.
+Don Craw-Daddy: *SILENCE* 
+Clarence: I only tell the truth, your Donliness, just ask her.
+do erase_characters()
+set GlobalVariables.memories_acquired += 1 
+=> END

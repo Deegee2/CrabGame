@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2tausrwfcyvy"
+path="res://.godot/imported/UIAlert_Memento Proximity Alert.wav-aa62d564bd884141f9e4915e312d4584.sample"
+
+[deps]
+
+source_file="res://Sound/UI/UIAlert_Memento Proximity Alert.wav"
+dest_files=["res://.godot/imported/UIAlert_Memento Proximity Alert.wav-aa62d564bd884141f9e4915e312d4584.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

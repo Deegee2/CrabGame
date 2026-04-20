@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://brtyi6vtytr2n"]
 
 [ext_resource type="Script" uid="uid://dohc6vqxgu12f" path="res://helpers/base_portrait.gd" id="1_8wvqw"]
-[ext_resource type="Texture2D" uid="uid://csf0xfqjs7qxw" path="res://characters/clarence/body.svg" id="2_ir0ij"]
-[ext_resource type="Texture2D" uid="uid://bcek41ojfj3ff" path="res://characters/clarence/face.svg" id="3_0dhfa"]
+[ext_resource type="Texture2D" uid="uid://cfgxwm576tl0i" path="res://characters/clarence/crab_-flashback.png" id="2_odkk4"]
 [ext_resource type="Texture2D" uid="uid://4xg73ryo7py2" path="res://characters/clarence/face_happy.svg" id="4_lqny7"]
 
 [sub_resource type="Animation" id="Animation_4xwua"]
@@ -10,50 +9,38 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Anchor/Body/Face:texture")
+tracks/0/path = NodePath("Anchor:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_0dhfa")]
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Anchor/Body/Face:position")
+tracks/1/path = NodePath("Anchor/Body:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(40, 20)]
+"update": 1,
+"values": [ExtResource("2_odkk4")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Anchor:scale")
+tracks/2/path = NodePath("Anchor/Body/Face:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Anchor/Body:texture")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_ir0ij")]
+"values": [null]
 }
 
 [sub_resource type="Animation" id="Animation_qrdbg"]
@@ -61,50 +48,26 @@ resource_name = "default"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Anchor/Body/Face:texture")
+tracks/0/path = NodePath("Anchor:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_0dhfa")]
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Anchor/Body/Face:position")
+tracks/1/path = NodePath("Anchor/Body:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(40, 20)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Anchor:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Anchor/Body:texture")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_ir0ij")]
+"values": [ExtResource("2_odkk4")]
 }
 
 [sub_resource type="Animation" id="Animation_aryb2"]
@@ -141,25 +104,24 @@ _data = {
 &"happy": SubResource("Animation_aryb2")
 }
 
-[node name="Portrait" type="Node2D" node_paths=PackedStringArray("animation_player")]
+[node name="Portrait" type="Node2D" unique_id=2034627772 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_8wvqw")
 animation_player = NodePath("AnimationPlayer")
 
-[node name="Anchor" type="Marker2D" parent="."]
+[node name="Anchor" type="Marker2D" parent="." unique_id=2094949959]
 
-[node name="Body" type="Sprite2D" parent="Anchor"]
-position = Vector2(0, -251)
-texture = ExtResource("2_ir0ij")
+[node name="Body" type="Sprite2D" parent="Anchor" unique_id=488617617]
+position = Vector2(25.104315, -445.69424)
+scale = Vector2(0.21402876, 0.221223)
+texture = ExtResource("2_odkk4")
 centered = false
 offset = Vector2(-150, -250)
 
-[node name="Face" type="Sprite2D" parent="Anchor/Body"]
+[node name="Face" type="Sprite2D" parent="Anchor/Body" unique_id=1718893595]
+visible = false
 position = Vector2(40, 20)
-texture = ExtResource("3_0dhfa")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=865057888]
 unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_tiydy")
-}
-autoplay = "default"
+libraries/ = SubResource("AnimationLibrary_tiydy")
+autoplay = &"default"

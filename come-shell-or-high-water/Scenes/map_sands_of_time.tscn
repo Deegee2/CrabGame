@@ -7,22 +7,26 @@
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="3_k5hfa"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="4_irdsc"]
 [ext_resource type="Texture2D" uid="uid://c25m2c56h8stk" path="res://Textures/sandtexture.png" id="4_un6uj"]
-[ext_resource type="Resource" uid="uid://bggxfff8ceyst" path="res://Cutscenes/Memoir 01.dialogue" id="6_3yel8"]
-[ext_resource type="Resource" uid="uid://c7yn75oom05q8" path="res://Cutscenes/Memoir 02.dialogue" id="7_3yel8"]
-[ext_resource type="Resource" uid="uid://raaldiy42uj0" path="res://Cutscenes/Memoir 03.dialogue" id="8_ejudj"]
+[ext_resource type="Texture2D" uid="uid://dduwoer5c32f0" path="res://Scenes/Crab-front-no_She_ll(1).png" id="6_e54yt"]
+[ext_resource type="AudioStream" uid="uid://cns3p7p1stufl" path="res://Sound/Character_Footsteps/FEETAnml_Crab Footsteps Loop.wav" id="8_2juk5"]
 [ext_resource type="Texture2D" uid="uid://uan0kuagxa36" path="res://Sprites/BottleCapMemory.png" id="8_u55gu"]
-[ext_resource type="Resource" uid="uid://csopx6gegp8ne" path="res://Cutscenes/Memoir 04.dialogue" id="9_a16np"]
-[ext_resource type="Resource" uid="uid://bqct6ok8jg13k" path="res://Cutscenes/Memoir 05.dialogue" id="10_b1gdt"]
+[ext_resource type="Resource" uid="uid://bp1jfoyc15ive" path="res://Cutscenes/thedream.dialogue" id="9_e54yt"]
 [ext_resource type="Texture2D" uid="uid://bis43sbtg2rjx" path="res://Sprites/bulletmemory.png" id="10_un6uj"]
-[ext_resource type="Resource" uid="uid://bubg0al867waj" path="res://Cutscenes/Memoir 06.dialogue" id="11_02txh"]
+[ext_resource type="Resource" uid="uid://bsmfj16l4xt" path="res://Cutscenes/leaving_the_mafia.dialogue" id="11_f00fb"]
 [ext_resource type="Texture2D" uid="uid://n2d6qdeotei2" path="res://Sprites/CrabMeatMemory.png" id="12_e54yt"]
-[ext_resource type="Resource" uid="uid://mcyfsggj4clk" path="res://Cutscenes/Memoir 07.dialogue" id="12_l7xll"]
+[ext_resource type="Resource" uid="uid://62ud6g075ut4" path="res://Cutscenes/meeting.dialogue" id="13_e54yt"]
 [ext_resource type="PackedScene" uid="uid://q0iagatpjpu8" path="res://Scenes/end_flee.tscn" id="14_02txh"]
 [ext_resource type="Texture2D" uid="uid://df8mrlkriownx" path="res://Sprites/CrabTwineMemory.png" id="14_f00fb"]
 [ext_resource type="PackedScene" uid="uid://bnt2lsnk077eh" path="res://Scenes/end_wedding.tscn" id="15_l7xll"]
 [ext_resource type="Texture2D" uid="uid://b3kuoabvnyy10" path="res://Sprites/Eggmemory.png" id="16_2juk5"]
+[ext_resource type="Resource" uid="uid://cjqrkk4gsq6ho" path="res://Cutscenes/crabette_pregnant.dialogue" id="17_e54yt"]
+[ext_resource type="Resource" uid="uid://7bmgqgsscpfg" path="res://Cutscenes/blessing.dialogue" id="17_f00fb"]
 [ext_resource type="Texture2D" uid="uid://chd86yuqcpcl4" path="res://Sprites/pamhletmemory.png" id="18_7hvse"]
+[ext_resource type="Resource" uid="uid://clknfik51kblf" path="res://Cutscenes/meeting_the_don.dialogue" id="19_f00fb"]
 [ext_resource type="Texture2D" uid="uid://bjknkgcqiugya" path="res://Sprites/PlasticPackMemory.png" id="20_or6uk"]
+[ext_resource type="Resource" uid="uid://cuergpdmnpmoy" path="res://Cutscenes/injail.dialogue" id="21_2juk5"]
+[ext_resource type="AudioStream" uid="uid://bnositoi2rhfy" path="res://Sound/BGM/MUSCSong_Beachfront_Contemplative.wav" id="25_f00fb"]
+[ext_resource type="AudioStream" uid="uid://covk51b7rm8ye" path="res://Sound/Ambiance/AMBSea_Waves.wav" id="27_7hvse"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lahq8"]
 sky_top_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
@@ -99,6 +103,14 @@ size = Vector3(150, 1, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_e54yt")
+}],
+"loop": true,
+"name": &"clarence",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_irdsc")
 }],
 "loop": true,
@@ -159,7 +171,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("3_k5hfa")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="Crabeau" unique_id=1965429101]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.92569065, 0)
 sprite_frames = SubResource("SpriteFrames_5x2dh")
+animation = &"clarence"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crabeau" unique_id=975894861]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
@@ -172,11 +186,14 @@ collision_mask = 16
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_3yel8")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Crabeau" unique_id=1870031573]
+stream = ExtResource("8_2juk5")
+
 [node name="Obj_Object1" parent="." unique_id=688539386 instance=ExtResource("3_bbrf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.70896, 1, -6.1799355)
 
 [node name="ObjectArea" parent="Obj_Object1" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("6_3yel8")
+dialogue_resource = ExtResource("9_e54yt")
 
 [node name="AnimatedSprite3D" parent="Obj_Object1" index="1" unique_id=1187834936]
 texture = ExtResource("8_u55gu")
@@ -185,7 +202,7 @@ texture = ExtResource("8_u55gu")
 transform = Transform3D(0.6716689, -0.74085164, 0, 0.74085164, 0.6716689, 0, 0, 0, 1, -38.523, 0.8770008, 30)
 
 [node name="ObjectArea" parent="Obj_Object2" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("7_3yel8")
+dialogue_resource = ExtResource("11_f00fb")
 
 [node name="AnimatedSprite3D" parent="Obj_Object2" index="1" unique_id=1187834936]
 texture = ExtResource("10_un6uj")
@@ -194,7 +211,7 @@ texture = ExtResource("10_un6uj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.231096, 1.5361996, 13.046864)
 
 [node name="ObjectArea" parent="Obj_Object3" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("8_ejudj")
+dialogue_resource = ExtResource("13_e54yt")
 
 [node name="AnimatedSprite3D" parent="Obj_Object3" index="1" unique_id=1187834936]
 transform = Transform3D(0.9565188, 0.29167062, 0, -0.29167062, 0.9565188, 0, 0, 0, 1, 0, 0.1442213, 0)
@@ -204,7 +221,7 @@ texture = ExtResource("12_e54yt")
 transform = Transform3D(0.89841884, 0.43913963, 0, -0.43913963, 0.89841884, 0, 0, 0, 1, 10.85, 1.435, 32)
 
 [node name="ObjectArea" parent="Obj_Object4" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("9_a16np")
+dialogue_resource = ExtResource("17_f00fb")
 
 [node name="AnimatedSprite3D" parent="Obj_Object4" index="1" unique_id=1187834936]
 texture = ExtResource("14_f00fb")
@@ -213,7 +230,7 @@ texture = ExtResource("14_f00fb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.727295, 1, -17.384518)
 
 [node name="ObjectArea" parent="Obj_Object5" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("10_b1gdt")
+dialogue_resource = ExtResource("17_e54yt")
 
 [node name="CollisionShape3D" parent="Obj_Object5/ObjectArea" index="0" unique_id=1388431034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02732277, 0, 0)
@@ -226,7 +243,7 @@ texture = ExtResource("16_2juk5")
 transform = Transform3D(0.7062918, 0.70792085, 0, -0.70792085, 0.7062918, 0, 0, 0, 1, 42.99311, 0.8130574, 19.500729)
 
 [node name="ObjectArea" parent="Obj_Object6" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("11_02txh")
+dialogue_resource = ExtResource("19_f00fb")
 
 [node name="AnimatedSprite3D" parent="Obj_Object6" index="1" unique_id=1187834936]
 texture = ExtResource("18_7hvse")
@@ -235,7 +252,7 @@ texture = ExtResource("18_7hvse")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.012024, 1.8189082, -0.29327774)
 
 [node name="ObjectArea" parent="Obj_Object7" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("12_l7xll")
+dialogue_resource = ExtResource("21_2juk5")
 
 [node name="AnimatedSprite3D" parent="Obj_Object7" index="1" unique_id=1187834936]
 texture = ExtResource("20_or6uk")
@@ -246,7 +263,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 0, 30)
 [node name="End_Wedding" parent="." unique_id=154024107 instance=ExtResource("15_l7xll")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 30)
 
+[node name="Ending_Wedding" parent="End_Wedding" index="0" unique_id=1446156801]
+ending_scene = "res://Cutscenes/ending2.tscn"
+
+[node name="bgm" type="AudioStreamPlayer" parent="." unique_id=1457783646]
+stream = ExtResource("25_f00fb")
+volume_db = -8.0
+autoplay = true
+
+[node name="ambience" type="AudioStreamPlayer" parent="." unique_id=747937225]
+stream = ExtResource("27_7hvse")
+autoplay = true
+
 [connection signal="area_entered" from="Crabeau/Actionable" to="Crabeau" method="_on_actionable_area_entered"]
+[connection signal="finished" from="bgm" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="ambience" to="." method="_on_ambience_finished"]
 
 [editable path="Obj_Object1"]
 [editable path="Obj_Object2"]
@@ -255,3 +286,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 30)
 [editable path="Obj_Object5"]
 [editable path="Obj_Object6"]
 [editable path="Obj_Object7"]
+[editable path="End_Flee"]
+[editable path="End_Wedding"]

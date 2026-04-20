@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://myfu6qaej3oo"]
 
 [ext_resource type="Script" uid="uid://dohc6vqxgu12f" path="res://helpers/base_portrait.gd" id="1_1rxmk"]
-[ext_resource type="Texture2D" uid="uid://cf2kub6grc068" path="res://characters/crabette/body.svg" id="2_imhfh"]
+[ext_resource type="Texture2D" uid="uid://dis5qet1771qb" path="res://characters/crabette/crabbette-flashback.png" id="2_7gpx6"]
 [ext_resource type="Texture2D" uid="uid://cciloof4epa5g" path="res://characters/crabette/face.svg" id="3_0ty5o"]
 [ext_resource type="Texture2D" uid="uid://bs0pefgnsni6y" path="res://characters/crabette/face_shady.svg" id="4_e5s61"]
 
@@ -19,18 +19,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Anchor/Body/Face:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_0ty5o")]
-}
 
 [sub_resource type="Animation" id="Animation_8ium3"]
 resource_name = "default"
@@ -45,18 +33,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Anchor/Body/Face:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_0ty5o")]
 }
 
 [sub_resource type="Animation" id="Animation_3dax0"]
@@ -93,23 +69,35 @@ _data = {
 &"shady": SubResource("Animation_3dax0")
 }
 
-[node name="Portrait" type="Node2D" node_paths=PackedStringArray("animation_player")]
+[node name="Portrait" type="Node2D" unique_id=1838727227 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_1rxmk")
 animation_player = NodePath("AnimationPlayer")
 
-[node name="Anchor" type="Marker2D" parent="."]
+[node name="Anchor" type="Marker2D" parent="." unique_id=1625594356]
 
-[node name="Body" type="Sprite2D" parent="Anchor"]
-position = Vector2(1, -250)
-texture = ExtResource("2_imhfh")
+[node name="Body" type="Sprite2D" parent="Anchor" unique_id=399984062]
+position = Vector2(25.104, -223.5)
+scale = Vector2(0.20383693, 0.19649282)
+texture = ExtResource("2_7gpx6")
+offset = Vector2(-150, -250)
+flip_h = true
 
-[node name="Face" type="Sprite2D" parent="Anchor/Body"]
+[node name="Face" type="Sprite2D" parent="Anchor/Body" unique_id=570426926]
 position = Vector2(20, 87)
 texture = ExtResource("3_0ty5o")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Body2" type="Sprite2D" parent="Anchor" unique_id=515328825]
+position = Vector2(25.104, -223.5)
+scale = Vector2(0.20383693, 0.19649282)
+texture = ExtResource("2_7gpx6")
+offset = Vector2(-150, -250)
+flip_h = true
+
+[node name="Face" type="Sprite2D" parent="Anchor/Body2" unique_id=575900609]
+position = Vector2(20, 87)
+texture = ExtResource("3_0ty5o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1599055213]
 unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_k0qvg")
-}
-autoplay = "default"
+libraries/ = SubResource("AnimationLibrary_k0qvg")
+autoplay = &"default"

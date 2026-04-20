@@ -1,0 +1,11 @@
+~ start
+do add_characters("Clarence")
+do add_characters("Crabette")
+Credits 
+Bryan Dilligard - Programmer, Scenario Writer 
+Joshua Chilton - Scenario Writer, Artist
+Joshua Fenner - Sound Director
+Jaquan Carter - Artist 
+Davon Crawley - Programmer, Level Designer
+do erase_characters()
+=> END

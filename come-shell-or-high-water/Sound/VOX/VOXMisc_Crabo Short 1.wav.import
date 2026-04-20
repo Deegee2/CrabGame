@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csppv8t8g7ach"
+path="res://.godot/imported/VOXMisc_Crabo Short 1.wav-72c7c6cd4b82d331c0c2ddff0a8fa8c4.sample"
+
+[deps]
+
+source_file="res://Sound/VOX/VOXMisc_Crabo Short 1.wav"
+dest_files=["res://.godot/imported/VOXMisc_Crabo Short 1.wav-72c7c6cd4b82d331c0c2ddff0a8fa8c4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

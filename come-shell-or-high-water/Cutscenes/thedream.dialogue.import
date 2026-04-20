@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bp1jfoyc15ive"
+path="res://.godot/imported/thedream.dialogue-9d0baa70bd6db67785f131689a6acffc.tres"
+
+[deps]
+
+source_file="res://Cutscenes/thedream.dialogue"
+dest_files=["res://.godot/imported/thedream.dialogue-9d0baa70bd6db67785f131689a6acffc.tres"]
+
+[params]
+
+defaults=true

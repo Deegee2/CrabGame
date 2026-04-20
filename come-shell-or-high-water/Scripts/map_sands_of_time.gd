@@ -1,7 +1,8 @@
 extends Control
 @onready var end_flee: Node3D = $End_Flee/Ending_Flee
 @onready var end_wedding: Node3D = $End_Wedding/Ending_Wedding
-
+@onready var audio_stream_player: AudioStreamPlayer = $bgm
+@onready var ambience: AudioStreamPlayer = $ambience
 
 func _ready() -> void:
 	DialogueManager.connect("dialogue_ended",checkIfEnding)
@@ -22,3 +23,11 @@ func print_characters():
 
 func erase_characters():
 	GlobalVariables.characters_in_scene.clear()
+
+
+func _on_audio_stream_player_finished() -> void:
+	audio_stream_player.play()
+
+
+func _on_ambience_finished() -> void:
+	ambience.play()

@@ -1,0 +1,25 @@
+~ start
+do add_characters("Clarence")
+do add_characters("Crabette")
+set GlobalVariables.current_background = "res://locations/Date-spot.png"
+Crabbette: Blub blub, blub blub, blub.
+Clarence: I agree, my delightful decapod. I’ve never been happier.
+Crabbette: Blub blub blub, blub blub blub blub? 
+Clarence: I don’t know. My life has belonged to the streets since my Granny passed. She gave me everything after my parents were taken, and I her. Before I met you, I had long been adrift. 
+Crabbette: Blub blub! Blub, blub blub blub. Blub? 
+Clarence: The only future I can see is one with you in it. But maybe I should want more. But all I have ever known is how to keep my head down and my shell shiny.
+Crabbette: Blub blub?
+Clarence: Heh, I got it from my granny. I was a cutup in school, and she knew that education and high society wasn’t where I was headed. She knew I needed a skill, and she always said: ‘A Crab will never know when they may die, so they must always keep a shiny shell.
+Crabbette: Blub? 
+Clarence: Well, I suppose a shiny shell implies a dignified life.
+Crabbette: Blub blub blub?
+Clarence: Well, I wouldn’t call my life dignified, per se, but I do take pride in my ability to keep up appearances. Honestly, I wish some of the other Hermit Crabs I’ve met could do the same.
+Crabbette: Blub blub, blub blub blub BLUB!
+Clarence: Hm. Maybe you’re right. I don’t have to spend the rest of my life running Cake under my shell. I could help other Hermies life a shiny life.
+Crabbette: Blub blub! *swoons* 
+Clarence: I’ll open a boutique. I can polish their shells, and even recycle the shells of the fallen. In death, we can shoulder their burdens.
+Crabbette: Blub blub! 
+Clarence: Yes, my sweet, and they’ll gook good doing so.
+do erase_characters()
+set GlobalVariables.memories_acquired += 1
+=> END

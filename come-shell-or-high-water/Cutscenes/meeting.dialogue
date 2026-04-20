@@ -1,0 +1,25 @@
+~ start
+do add_characters("Clarence")
+do add_characters("Crabette")
+set GlobalVariables.current_background = "res://locations/Alley.png"
+Clarence: Hehe, those Swordies are so dumb. They just assume a clean shell means a clean life. I can’t believe other runners think they’re in danger. Granny taught me well.  
+*Rustle*
+Clarence: Who’s there? 
+Crabbette: Blub blub 
+Clarence: *Blushes* 
+Crabbette: Blub blub, blubb?
+Clarence: I can’t imagine someone like you would be after some Cake?
+Crabbette: ...Blub blub blub blub...blub.
+Clarence: You don’t want this. Why would anyone want this? You know what this is.
+Crabbette: Blub blub blub blub, BLUB. 
+Clarence: Don CrawDad’s own daughter!? I can’t. He’ll have my shell for this.
+Crabbette: Blub blub! 
+Clarence: Need this? You won’t die without this. You could have anything you want.
+Crabbette: ...Blub blub. Blub, blub blub blub. 
+Clarence: I’ve seen people eat this. Just one bite, and it’s all you want for the rest of your life. For the turtles,I kinda get it, but for you? Your father WILL find out. 
+Crabbette: *blushes* ...blub blub blub.
+Clarence: *Blushes* 
+This was only the beginning.
+do erase_characters()
+set GlobalVariables.memories_acquired += 1
+=> END

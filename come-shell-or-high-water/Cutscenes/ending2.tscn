@@ -1,0 +1,296 @@
+[gd_scene format=3 uid="uid://dom3con0a77mc"]
+
+[ext_resource type="Script" uid="uid://mcfh72j3dujb" path="res://Cutscenes/main.gd" id="1_o2ocy"]
+[ext_resource type="Resource" uid="uid://qg0adoydkpt5" path="res://Cutscenes/ending.dialogue" id="2_qgiqu"]
+[ext_resource type="Texture2D" uid="uid://daeddoy78i7r7" path="res://Ending_Cards/Wedding.png" id="3_o2ocy"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="4_bs6bq"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="5_fuhbp"]
+[ext_resource type="AudioStream" uid="uid://c6v66desqd04a" path="res://Sound/BGM/MUSCSong_Married Life.wav" id="6_qgiqu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyhfs"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.607843)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbgi4"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0370172, 0.128549, 0.136719, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0907391, 0.625, 0.350887, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6xl0"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0370172, 0.128549, 0.136719, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0907391, 0.625, 0.350887, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85g3d"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0370172, 0.128549, 0.136719, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0907391, 0.625, 0.350887, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
+bg_color = Color(0.0908459, 0.122343, 0.140625, 1)
+
+[sub_resource type="Theme" id="Theme_o6xl0"]
+Button/font_sizes/font_size = 40
+Button/styles/disabled = SubResource("StyleBoxFlat_jyhfs")
+Button/styles/focus = SubResource("StyleBoxFlat_tbgi4")
+Button/styles/hover = SubResource("StyleBoxFlat_o6xl0")
+Button/styles/normal = SubResource("StyleBoxFlat_tipki")
+Button/styles/pressed = SubResource("StyleBoxFlat_85g3d")
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 80
+MarginContainer/constants/margin_right = 80
+MarginContainer/constants/margin_top = 20
+Panel/styles/panel = SubResource("StyleBoxFlat_tefeu")
+RichTextLabel/font_sizes/bold_font_size = 40
+RichTextLabel/font_sizes/bold_italics_font_size = 40
+RichTextLabel/font_sizes/italics_font_size = 40
+RichTextLabel/font_sizes/mono_font_size = 40
+RichTextLabel/font_sizes/normal_font_size = 40
+
+[sub_resource type="Animation" id="Animation_tbgi4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jyhfs"]
+resource_name = "change_location"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_swap_location_texture"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_tefeu"]
+resource_name = "fade_in"
+length = 1.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tefeu"]
+_data = {
+&"RESET": SubResource("Animation_tbgi4"),
+&"change_location": SubResource("Animation_jyhfs"),
+&"fade_in": SubResource("Animation_tefeu")
+}
+
+[node name="GoodEnding" type="Control" unique_id=600891971]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_o6xl0")
+script = ExtResource("1_o2ocy")
+dialogue_resource = ExtResource("2_qgiqu")
+
+[node name="Stage" type="Control" parent="." unique_id=842530902]
+custom_minimum_size = Vector2(1920, 750)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 750.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="LocationBackground" type="TextureRect" parent="Stage" unique_id=1833386323]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 750)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 750.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_o2ocy")
+
+[node name="Slot0" type="Marker2D" parent="Stage" unique_id=651027551]
+unique_name_in_owner = true
+position = Vector2(450, 750)
+
+[node name="Slot1" type="Marker2D" parent="Stage" unique_id=508190324]
+unique_name_in_owner = true
+position = Vector2(1470, 750)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=641084297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1524463596]
+custom_minimum_size = Vector2(0, 750)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1234386623]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel" unique_id=1165985144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel/MarginContainer" unique_id=776022319]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CharacterLabel" type="RichTextLabel" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1917083170]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.470588)
+layout_mode = 2
+mouse_filter = 2
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=1122184601 instance=ExtResource("4_bs6bq")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="." unique_id=498846415 node_paths=PackedStringArray("response_template")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -369.0
+offset_top = -20.0
+offset_right = 369.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_fuhbp")
+response_template = NodePath("ResponseTemplate")
+
+[node name="ResponseTemplate" type="Button" parent="ResponsesMenu" unique_id=1991095329]
+layout_mode = 2
+text = "Response"
+
+[node name="Fade" type="ColorRect" parent="." unique_id=2013386769]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=747341655]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_tefeu")
+autoplay = &"fade_in"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=767826722]
+stream = ExtResource("6_qgiqu")
+volume_db = -13.0
+autoplay = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="response_selected" from="ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

@@ -32,6 +32,7 @@ size = Vector3(1, 1, 100)
 [node name="SC_LeaveHouse" parent="." unique_id=1446156801 instance=ExtResource("1_ft3rh")]
 collision_mask = 1
 script = ExtResource("2_b06wa")
+in_house = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SC_LeaveHouse" unique_id=1388431034]
 shape = SubResource("BoxShape3D_xgobo")
@@ -48,3 +49,5 @@ lifetime = 1.5
 explosiveness = 0.17
 process_material = SubResource("ParticleProcessMaterial_b06wa")
 draw_pass_1 = SubResource("BoxMesh_004be")
+
+[connection signal="area_entered" from="SC_LeaveHouse" to="SC_LeaveHouse" method="_on_area_entered"]

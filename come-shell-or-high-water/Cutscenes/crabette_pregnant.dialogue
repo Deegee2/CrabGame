@@ -1,6 +1,7 @@
 ~ start
 do add_characters("Clarence")
 do add_characters("Crabette")
+set GlobalVariables.current_background = "res://locations/Date-spot.png"
 Clarence: Isn't it a beautiful day, Crabette?
 Crabette: ...
 Clarence: What is it my coral queen?

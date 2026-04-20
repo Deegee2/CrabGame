@@ -1,6 +1,7 @@
 ~ start
 do add_characters("Clarence")
 do add_characters("Crabette")
+set GlobalVariables.current_background = "res://locations/Jail_Cell.png"
 Crabette: Blub. Blub 
 Clarence: Hello, sweetie. Sorry you have to see me not looking my best.
 Crabette: Blub. Blub?

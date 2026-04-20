@@ -1,0 +1,7 @@
+~ start
+do add_characters("Clarence")
+do add_characters("")
+Clarence: I'm getting married today.
+do erase_characters()
+set GlobalVariables.start_items_acquired += 1
+=> END

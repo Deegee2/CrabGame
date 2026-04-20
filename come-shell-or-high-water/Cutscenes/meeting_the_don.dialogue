@@ -1,6 +1,7 @@
 ~ start
 do add_characters("Clarence")
-do add_characters("Crabette")
+do add_characters("Don")
+set GlobalVariables.current_background = "res://locations/Art_Gallery.png"
 Clarence: You wanted to see me, Don?
 Don Craw-Daddy: Clarence, The Scallops have informed me of how you deftly duped the Swordfish Squad.
 Clarence: Oh, ‘twas nothing, your Donliness. The authorities never think twice of a shiny shell.

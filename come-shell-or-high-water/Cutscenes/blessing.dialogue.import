@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://7bmgqgsscpfg"
+path="res://.godot/imported/blessing.dialogue-e821c13eb915c43bfcf6324e41a602cc.tres"
+
+[deps]
+
+source_file="res://Cutscenes/blessing.dialogue"
+dest_files=["res://.godot/imported/blessing.dialogue-e821c13eb915c43bfcf6324e41a602cc.tres"]
+
+[params]
+
+defaults=true

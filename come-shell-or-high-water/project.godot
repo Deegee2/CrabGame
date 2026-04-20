@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Come Shell or High Water"
-run/main_scene="uid://beaj284824h8q"
+run/main_scene="uid://bpku40w57bff6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -55,7 +55,7 @@ ui_cancel={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Cutscenes/TestDia.dialogue", "res://Cutscenes/Memoir 01.dialogue", "res://Cutscenes/Memoir 02.dialogue", "res://Cutscenes/Memoir 03.dialogue", "res://Cutscenes/Memoir 04.dialogue", "res://Cutscenes/Memoir 05.dialogue", "res://Cutscenes/Memoir 06.dialogue", "res://Cutscenes/Memoir 07.dialogue", "res://Cutscenes/meeting_the_don.dialogue", "res://Cutscenes/leaving_the_mafia.dialogue", "res://Cutscenes/injail.dialogue", "res://Cutscenes/crabette_pregnant.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Cutscenes/TestDia.dialogue", "res://Cutscenes/Memoir 01.dialogue", "res://Cutscenes/Memoir 02.dialogue", "res://Cutscenes/Memoir 03.dialogue", "res://Cutscenes/Memoir 04.dialogue", "res://Cutscenes/Memoir 05.dialogue", "res://Cutscenes/Memoir 06.dialogue", "res://Cutscenes/Memoir 07.dialogue", "res://Cutscenes/meeting_the_don.dialogue", "res://Cutscenes/leaving_the_mafia.dialogue", "res://Cutscenes/injail.dialogue", "res://Cutscenes/crabette_pregnant.dialogue", "res://Cutscenes/Credits.dialogue", "res://Cutscenes/getting_married.dialogue", "res://Cutscenes/blessing.dialogue", "res://Cutscenes/meeting.dialogue", "res://Cutscenes/thedream.dialogue", "res://Cutscenes/ending.dialogue", "res://Cutscenes/ending_wedding.dialogue")
 
 [physics]
 

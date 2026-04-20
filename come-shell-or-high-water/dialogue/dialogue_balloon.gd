@@ -171,9 +171,10 @@ func show_characters(character_name: String, character_name2:String) -> void:
 	portrait = portrait_scene.instantiate() as BasePortrait
 	portrait_position.add_child(portrait)
 	
-	var portrait_scene_2: PackedScene = load("res://characters/%s/portrait.tscn" % character_name2.to_lower())
-	portrait2 = portrait_scene_2.instantiate() as BasePortrait
-	portrait_position_2.add_child(portrait2)
+	if character_name2 != "":
+		var portrait_scene_2: PackedScene = load("res://characters/%s/portrait.tscn" % character_name2.to_lower())
+		portrait2 = portrait_scene_2.instantiate() as BasePortrait
+		portrait_position_2.add_child(portrait2)
 	
 	animation_player.play("show_character")
 	await animation_player.animation_finished

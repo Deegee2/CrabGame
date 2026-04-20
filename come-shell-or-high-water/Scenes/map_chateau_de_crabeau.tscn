@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://bpku40w57bff6"]
 
-[ext_resource type="Script" uid="uid://c0tfs53ebs85p" path="res://Scripts/map_sands_of_time.gd" id="1_u2ddk"]
+[ext_resource type="Script" uid="uid://vh48tm845ngl" path="res://Scripts/map_chateau_de_crabeau.gd" id="1_66508"]
 [ext_resource type="Script" uid="uid://c86k3l5ex5w4w" path="res://Scenes/camera_3d.gd" id="2_wlm0s"]
 [ext_resource type="Texture2D" uid="uid://ua84jtge1kt8" path="res://Textures/oceantexture.png" id="3_66508"]
 [ext_resource type="Texture2D" uid="uid://71f10w0hx221" path="res://Textures/Livingroomflatabsentcredits.png" id="3_wasy2"]
 [ext_resource type="Script" uid="uid://r8rsy0od30yq" path="res://Scripts/crabeau.gd" id="4_ho5e3"]
 [ext_resource type="Texture2D" uid="uid://vpe0euupnplu" path="res://icon.svg" id="5_kmjtx"]
 [ext_resource type="PackedScene" uid="uid://qmvi5yxcl5oy" path="res://Scenes/obj_object.tscn" id="6_guks8"]
-[ext_resource type="Resource" uid="uid://raaldiy42uj0" path="res://Cutscenes/Memoir 03.dialogue" id="7_wasy2"]
+[ext_resource type="Texture2D" uid="uid://dduwoer5c32f0" path="res://Scenes/Crab-front-no_She_ll(1).png" id="6_sln5i"]
 [ext_resource type="Texture2D" uid="uid://bggjnmi2ik6fm" path="res://Textures/CreditsWhiteboard.png" id="8_66508"]
-[ext_resource type="Resource" uid="uid://c7yn75oom05q8" path="res://Cutscenes/Memoir 02.dialogue" id="8_dqiu4"]
+[ext_resource type="Resource" uid="uid://o2tcb1yc3ngh" path="res://Cutscenes/Credits.dialogue" id="8_sln5i"]
 [ext_resource type="PackedScene" uid="uid://dnfpq3pwylhgk" path="res://Scenes/SC_leavehouse.tscn" id="9_ctdjc"]
+[ext_resource type="Resource" uid="uid://cne8ddkjtsms4" path="res://Cutscenes/getting_married.dialogue" id="10_66508"]
 [ext_resource type="Texture2D" uid="uid://ctp6eu18tll3h" path="res://Textures/Tuxedosingle.png" id="10_sln5i"]
+[ext_resource type="AudioStream" uid="uid://mjlj0hftx2n4" path="res://Sound/BGM/MUSCSong_Beachfront_Slowed.wav" id="14_xkdh4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sln5i"]
 sky_top_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
@@ -44,6 +46,14 @@ size = Vector3(30, 1, 28.8)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_sln5i")
+}],
+"loop": true,
+"name": &"clarence",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_kmjtx")
 }],
 "loop": true,
@@ -64,7 +74,7 @@ height = 2.2456055
 [node name="Chateau de Crabeau" type="Control" unique_id=1820742018]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_u2ddk")
+script = ExtResource("1_66508")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=348510825]
 transform = Transform3D(1, 0, 0, 0, 0.9999862, 0.0052533746, 0, -0.0052533746, 0.9999862, 0, 4.014817, 6.746464)
@@ -110,7 +120,9 @@ min_z = -7
 max_z = 7
 
 [node name="Sprite" type="AnimatedSprite3D" parent="Crabeau" unique_id=1965429101]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.95726204, 0)
 sprite_frames = SubResource("SpriteFrames_5x2dh")
+animation = &"clarence"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crabeau" unique_id=975894861]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
@@ -123,11 +135,13 @@ collision_mask = 16
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_3yel8")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Crabeau" unique_id=405932334]
+
 [node name="Obj_Object1" parent="." unique_id=688539386 instance=ExtResource("6_guks8")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.101421, 5.0153155, -7.960298)
 
 [node name="ObjectArea" parent="Obj_Object1" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("7_wasy2")
+dialogue_resource = ExtResource("8_sln5i")
 
 [node name="CollisionShape3D" parent="Obj_Object1/ObjectArea" index="0" unique_id=1388431034]
 transform = Transform3D(2.395, 0, 0, 0, 2.395, 0, 0, 0, 2.395, 0, 0, 0)
@@ -141,7 +155,7 @@ texture = ExtResource("8_66508")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 2.8592725, 7.604885, 5.906199, -7.8387537)
 
 [node name="ObjectArea" parent="Obj_Object2" index="0" unique_id=1446156801]
-dialogue_resource = ExtResource("8_dqiu4")
+dialogue_resource = ExtResource("10_66508")
 
 [node name="CollisionShape3D" parent="Obj_Object2/ObjectArea" index="0" unique_id=1388431034]
 transform = Transform3D(1.79, 0, 0, 0, 1.79, 0, 0, 0, 1.79, 0, -0.21981704, 0)
@@ -154,13 +168,22 @@ texture = ExtResource("10_sln5i")
 [node name="SC_LeaveHouse" parent="." unique_id=1121127240 instance=ExtResource("9_ctdjc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.57594013, 14.427357, 0.6225898, 0.042661667)
 
+[node name="AnimatedSprite3D" parent="SC_LeaveHouse" index="1" unique_id=1595472362]
+visible = false
+
 [node name="Label3D" type="Label3D" parent="." unique_id=2002622127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.763118, -7.215669)
 modulate = Color(0.20152658, 0.20152658, 0.20152658, 1)
 text = "Come Shell or High Water"
 font_size = 356
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1542447176]
+stream = ExtResource("14_xkdh4")
+volume_db = -12.0
+autoplay = true
+
 [connection signal="area_entered" from="Crabeau/Actionable" to="Crabeau" method="_on_actionable_area_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="Obj_Object1"]
 [editable path="Obj_Object2"]

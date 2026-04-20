@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var sprite: AnimatedSprite3D = $Sprite
+@onready var walking_audio: AudioStreamPlayer = $AudioStreamPlayer
 
 var flip_speed : float = 15.0
 var is_facing_right : bool = true
@@ -37,6 +38,7 @@ func _physics_process(delta):
 
 	# The rest only runs if he's not talking
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	#walking_audio.play()
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta

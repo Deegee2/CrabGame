@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b3xr7uotdj6g"
+path="res://.godot/imported/ending_wedding.dialogue-b1bd96feddfb4ee4a6437c30eac1d13a.tres"
+
+[deps]
+
+source_file="res://Cutscenes/ending_wedding.dialogue"
+dest_files=["res://.godot/imported/ending_wedding.dialogue-b1bd96feddfb4ee4a6437c30eac1d13a.tres"]
+
+[params]
+
+defaults=true

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qmvi5yxcl5oy"]
 
 [ext_resource type="PackedScene" uid="uid://p445hgyh7lcy" path="res://helpers/actionable.tscn" id="1_08qdb"]
+[ext_resource type="AudioStream" uid="uid://b2tausrwfcyvy" path="res://Sound/UI/UIAlert_Memento Proximity Alert.wav" id="2_08qdb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sw4v7"]
 
@@ -13,3 +14,8 @@ collision_mask = 1
 shape = SubResource("SphereShape3D_sw4v7")
 
 [node name="AnimatedSprite3D" type="Sprite3D" parent="." unique_id=1187834936]
+
+[node name="player_interact" type="AudioStreamPlayer" parent="." unique_id=1427325483]
+stream = ExtResource("2_08qdb")
+
+[connection signal="area_entered" from="ObjectArea" to="ObjectArea" method="_on_area_entered"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://o2tcb1yc3ngh"
+path="res://.godot/imported/Credits.dialogue-99e9b83fd1fbb62ba1c1c087251f835b.tres"
+
+[deps]
+
+source_file="res://Cutscenes/Credits.dialogue"
+dest_files=["res://.godot/imported/Credits.dialogue-99e9b83fd1fbb62ba1c1c087251f835b.tres"]
+
+[params]
+
+defaults=true

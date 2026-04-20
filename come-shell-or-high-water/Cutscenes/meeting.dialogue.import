@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://62ud6g075ut4"
+path="res://.godot/imported/meeting.dialogue-264e880b89ed4e4dcac8aee0275b4766.tres"
+
+[deps]
+
+source_file="res://Cutscenes/meeting.dialogue"
+dest_files=["res://.godot/imported/meeting.dialogue-264e880b89ed4e4dcac8aee0275b4766.tres"]
+
+[params]
+
+defaults=true
