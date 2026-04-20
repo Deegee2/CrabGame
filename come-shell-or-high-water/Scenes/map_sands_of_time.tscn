@@ -259,9 +259,11 @@ texture = ExtResource("20_or6uk")
 
 [node name="End_Flee" parent="." unique_id=1385018301 instance=ExtResource("14_02txh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 0, 30)
+visible = false
 
 [node name="End_Wedding" parent="." unique_id=154024107 instance=ExtResource("15_l7xll")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 30)
+visible = false
 
 [node name="Ending_Wedding" parent="End_Wedding" index="0" unique_id=1446156801]
 ending_scene = "res://Cutscenes/ending2.tscn"
