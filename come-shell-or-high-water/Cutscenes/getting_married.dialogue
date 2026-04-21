@@ -2,6 +2,13 @@
 do add_characters("Clarence")
 do add_characters("")
 Clarence: I'm getting married today.
+Clarence: Maybe I should stroll around outside a bit before heading there.
+
+Items found along the sand may remind Clarence of memories long past.
+Once you've seen at least three memories, head to the far right to join your beloved!
+Alternatively, you can head to the far left to leave her high and dry!
+The choice is yours, brave crab.
+
 do erase_characters()
 set GlobalVariables.start_items_acquired += 1
 => END
