@@ -6,6 +6,7 @@ extends CharacterBody3D
 var flip_speed : float = 15.0
 var is_facing_right : bool = true
 var is_talking : bool = false
+var input_dir = Vector2()
 @export var speed: float = 10.0
 @export var gravity: float = 9.8
 
@@ -14,6 +15,8 @@ var is_talking : bool = false
 @export var min_z = -20 # background max
 @export var max_z = 35 # foreground max
 @export var clamping_buffer = 0.8
+
+var capture_delta : float = 0.0
 
 # placeholder flags for each item
 var item_one_get : bool = false
@@ -28,6 +31,7 @@ func _ready():
 	DialogueManager.connect("dialogue_ended",finishedScene)
 
 func _physics_process(delta):
+	capture_delta = delta
 	# 1. The Guard Clause: If we are talking, stop processing movement logic.
 	if is_talking:
 		# Prevents Crabeau from moving while he's talking
@@ -37,7 +41,11 @@ func _physics_process(delta):
 		return # Exits all movement function
 
 	# The rest only runs if he's not talking
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	if InputEventKey:
+		input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	#if InputEventMouseButton:
+		#input_dir = get_viewport().get_mouse_position()
+		#print(input_dir)
 	#walking_audio.play()
 	
 	if not is_on_floor():
@@ -64,11 +72,27 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, speed)
 		
 		
-		# Clamping Logic
+	# Clamping Logic
 	position.x = clamp(position.x, min_x + clamping_buffer, max_x - clamping_buffer)
 	position.z = clamp(position.z, min_z + clamping_buffer, max_z - clamping_buffer)
 	move_and_slide()
 
+#func _input(event):
+	#if event is InputEventMouseButton and event.pressed:
+		#if event.button_index == MOUSE_BUTTON_LEFT :
+			##print("Left mouse button")
+			#input_dir = event.position
+			#position = position.lerp(Vector3(input_dir.x, 0.0, input_dir.y),capture_delta * speed)
+			#print(event.position)
+		##if event.button_index == MOUSE_BUTTON_WHEEL_UP :
+			##print("Scroll wheel up")
+		##if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			##print("Scroll wheel down")
+
+#func _process(delta: float) -> void:
+	#position.lerp(Vector3(input_dir.x,0,0), delta * 20)
+	#print("here")
+	
 
 func _on_actionable_area_entered(area: Area3D) -> void:
 	if area.name == "ObjectArea":

@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://cne8ddkjtsms4" path="res://Cutscenes/getting_married.dialogue" id="10_66508"]
 [ext_resource type="Texture2D" uid="uid://ctp6eu18tll3h" path="res://Textures/Tuxedosingle.png" id="10_sln5i"]
 [ext_resource type="AudioStream" uid="uid://mjlj0hftx2n4" path="res://Sound/BGM/MUSCSong_Beachfront_Slowed.wav" id="14_xkdh4"]
+[ext_resource type="PackedScene" uid="uid://bwfqbu0rm64ty" path="res://Buttons/overlay_buttons.tscn" id="15_slhvn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sln5i"]
 sky_top_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
@@ -75,6 +76,9 @@ height = 2.2456055
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_66508")
+
+[node name="OverlayButtons" parent="." unique_id=901102396 instance=ExtResource("15_slhvn")]
+layout_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=348510825]
 transform = Transform3D(1, 0, 0, 0, 0.9999862, 0.0052533746, 0, -0.0052533746, 0.9999862, 0, 4.014817, 6.746464)

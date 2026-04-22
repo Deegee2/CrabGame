@@ -27,6 +27,7 @@
 [ext_resource type="Resource" uid="uid://cuergpdmnpmoy" path="res://Cutscenes/injail.dialogue" id="21_2juk5"]
 [ext_resource type="AudioStream" uid="uid://bnositoi2rhfy" path="res://Sound/BGM/MUSCSong_Beachfront_Contemplative.wav" id="25_f00fb"]
 [ext_resource type="AudioStream" uid="uid://covk51b7rm8ye" path="res://Sound/Ambiance/AMBSea_Waves.wav" id="27_7hvse"]
+[ext_resource type="PackedScene" uid="uid://bwfqbu0rm64ty" path="res://Buttons/overlay_buttons.tscn" id="28_or6uk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lahq8"]
 sky_top_color = Color(0.46341705, 0.23374394, 0.99999994, 1)
@@ -280,6 +281,9 @@ autoplay = true
 [node name="ambience" type="AudioStreamPlayer" parent="." unique_id=747937225]
 stream = ExtResource("27_7hvse")
 autoplay = true
+
+[node name="OverlayButtons" parent="." unique_id=901102396 instance=ExtResource("28_or6uk")]
+layout_mode = 1
 
 [connection signal="area_entered" from="Crabeau/Actionable" to="Crabeau" method="_on_actionable_area_entered"]
 [connection signal="finished" from="bgm" to="." method="_on_audio_stream_player_finished"]

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bwfqbu0rm64ty"]
+
+[ext_resource type="Script" uid="uid://cnksydl6uuiok" path="res://Buttons/overlay_buttons.gd" id="1_bbbvs"]
+[ext_resource type="Texture2D" uid="uid://x5j30vhg6agd" path="res://Buttons/keyboard_arrow_down.png" id="1_xwngv"]
+[ext_resource type="Texture2D" uid="uid://bdt0gndimneuf" path="res://Buttons/keyboard_arrow_up.png" id="2_1g7ek"]
+[ext_resource type="Texture2D" uid="uid://cv166tfhxl1y5" path="res://Buttons/keyboard_arrow_left.png" id="3_bbbvs"]
+[ext_resource type="Texture2D" uid="uid://bysnxfncr6wbp" path="res://Buttons/keyboard_arrow_right.png" id="4_2w8yn"]
+
+[node name="OverlayButtons" type="Control" unique_id=901102396]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bbbvs")
+
+[node name="DownButton" type="TextureButton" parent="." unique_id=1770660981]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 962.0
+offset_top = 954.0
+offset_right = 1090.0
+offset_bottom = 1082.0
+texture_normal = ExtResource("1_xwngv")
+
+[node name="UpButton" type="TextureButton" parent="." unique_id=1839592631]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 960.0
+offset_right = 1088.0
+offset_bottom = 128.0
+texture_normal = ExtResource("2_1g7ek")
+
+[node name="LeftButton" type="TextureButton" parent="." unique_id=456559398]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 457.0
+offset_right = 128.0
+offset_bottom = 585.0
+texture_normal = ExtResource("3_bbbvs")
+
+[node name="RightButton" type="TextureButton" parent="." unique_id=1259363604]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1785.0
+offset_top = 440.0
+offset_right = 1913.0
+offset_bottom = 568.0
+texture_normal = ExtResource("4_2w8yn")
+
+[connection signal="button_down" from="DownButton" to="." method="_on_down_button_pressed"]
+[connection signal="button_up" from="DownButton" to="." method="_on_down_button_button_up"]
+[connection signal="pressed" from="DownButton" to="." method="_on_down_button_pressed"]
+[connection signal="button_down" from="UpButton" to="." method="_on_up_button_pressed"]
+[connection signal="button_up" from="UpButton" to="." method="_on_up_button_button_up"]
+[connection signal="pressed" from="UpButton" to="." method="_on_up_button_pressed"]
+[connection signal="button_down" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="button_up" from="LeftButton" to="." method="_on_left_button_button_up"]
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="button_down" from="RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="button_up" from="RightButton" to="." method="_on_right_button_button_up"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
